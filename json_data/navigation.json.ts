@@ -7,7 +7,7 @@ export const navigationMenus: NavigationType[] = [
     icon: null,
     dropdown: false,
     item: null,
-    href: "/"
+    href: "/",
   },
   {
     title: "Travel Services",
@@ -16,9 +16,38 @@ export const navigationMenus: NavigationType[] = [
     dropdown: true,
     href: "#",
     item: [
-      { title: "Corporate Travel", description: "Tailored travel for businesses", icon: "briefcase", dropdown: false, item: null, href: "/corporate-travel" },
-      { title: "Cruises", description: "Luxury cruise experiences", icon: "sailboat", dropdown: false, item: null, href: "/cruises" },
-      { title: "Rail Europe", description: "Explore Europe by rail", icon: "train-track", dropdown: false, item: null, href: "/rail-europe" },
+      {
+        title: "Corporate Travel",
+        description: "Tailored travel for businesses",
+        icon: "Briefcase",
+        dropdown: false,
+        item: null,
+        href: "/corporate-travel",
+      },
+      {
+        title: "Travel Insurance",
+        description: "Protect your journey",
+        icon: "ShieldCheck",
+        dropdown: false,
+        item: null,
+        href: "/travel-insurance",
+      },
+      {
+        title: "Cruises",
+        description: "Luxury cruise experiences",
+        icon: "Sailboat",
+        dropdown: false,
+        item: null,
+        href: "/cruises",
+      },
+      {
+        title: "Rail Europe",
+        description: "Explore Europe by rail",
+        icon: "TrainTrack",
+        dropdown: false,
+        item: null,
+        href: "/rail-europe",
+      },
     ],
   },
   {
@@ -28,20 +57,38 @@ export const navigationMenus: NavigationType[] = [
     dropdown: true,
     href: "#",
     item: [
-      { title: "Disney Vacations", description: "Magical Disney holiday packages", icon: "castle", dropdown: false, item: null, href: "/disney-vacations" },
-      { title: "Umrah & Hajj", description: "Spiritual travel arrangements", icon: "heart", dropdown: false, item: null, href: "/umrah-hajj" },
-      { title: "Destawed", description: "Special destination packages", icon: "map-pin", dropdown: false, item: null, href: "/destawed" },
-      { title: "Ashura Travel", description: "Customized Ashura travel", icon: "calendar", dropdown: false, item: null, href: "/ashura-travel" },
-    ],
-  },
-  {
-    title: "Support Services",
-    description: "Additional travel support",
-    icon: null,
-    dropdown: true,
-    href: "#",
-    item: [
-      { title: "Travel Insurance", description: "Protect your journey", icon: "shield-check", dropdown: false, item: null, href: "/travel-insurance" },
+      {
+        title: "Disney Vacations",
+        description: "Magical Disney holiday packages",
+        icon: "Castle",
+        dropdown: false,
+        item: null,
+        href: "/disney-vacations",
+      },
+      {
+        title: "Umrah & Hajj",
+        description: "Spiritual travel arrangements",
+        icon: "Heart",
+        dropdown: false,
+        item: null,
+        href: "/umrah-hajj",
+      },
+      {
+        title: "Destawed",
+        description: "Special destination packages",
+        icon: "MapPin",
+        dropdown: false,
+        item: null,
+        href: "/destawed",
+      },
+      {
+        title: "Ashura Travel",
+        description: "Customized Ashura travel",
+        icon: "Calendar",
+        dropdown: false,
+        item: null,
+        href: "/ashura-travel",
+      },
     ],
   },
   {
@@ -50,7 +97,7 @@ export const navigationMenus: NavigationType[] = [
     icon: null,
     dropdown: false,
     item: null,
-    href: "/"
+    href: "/",
   },
   {
     title: "Contact",
@@ -58,6 +105,6 @@ export const navigationMenus: NavigationType[] = [
     icon: null,
     dropdown: false,
     item: null,
-    href: "/"
+    href: "/",
   },
 ];
