@@ -40,7 +40,7 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={cn("w-full bg-transparent relative")}>
+      <nav className={cn("w-full bg-background fixed inset-0 z-20 h-max")}>
         <div className={cn("container mx-auto px-4 py-1 flex items-center justify-between")}>
           <Link href="/">
             <Image src="/images/branding/logo.svg" width={200} height={83} priority alt='travel arrangers.ca' />
@@ -55,7 +55,6 @@ const Navbar = () => {
                     <NavigationMenuItem key={index}>
                       <NavigationMenuTrigger className='nav-link'>{menus.title}</NavigationMenuTrigger>
                       <NavigationMenuContent>
-                        {/* <ul className={cn("grid gap-2", menus.item && menus.item.length >= 3 ? "md:grid-cols-2 md:w-[550px]" : "md:grid-cols-1 w-[400px]")}> */}
                         <ul className={cn("grid gap-2 md:grid-cols-1 w-[350px]")}>
                           {menus.item && menus.item.map((menus, index) => {
                             const Icon = menus.icon ? (Icons[menus.icon as keyof typeof Icons] as React.ElementType) : null;
@@ -68,7 +67,7 @@ const Navbar = () => {
                                         {Icon && <Icon color="var(--primary)" className="size-6" />}
                                       </div>
                                       <div className="flex-1">
-                                        <div className="text-neutral-900 text-sm font-semibold leading-none">{menus.title}</div>
+                                        <div className="text-foreground text-sm font-semibold leading-none">{menus.title}</div>
                                         <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">{menus.description}</p>
                                       </div>
                                     </div>
@@ -124,18 +123,14 @@ const Navbar = () => {
                   <div className="flex flex-col gap-6">
                     {navigationMenus.map((menus, index) => (
                       !menus.dropdown ? (
-                        <>
-                          <Link href={menus.href} className="nav-link" onClick={closeMobileMenu} key={index}>
-                            {menus.title}
-                          </Link>
-                        </>
+                        <Link href={menus.href} className="nav-link" onClick={closeMobileMenu} key={index}>
+                          {menus.title}
+                        </Link>
                       ) : (
-                        <>
-                          <button onClick={() => openMobileSubmenu(menus.title)} className="flex items-center justify-between nav-link" key={index}>
-                            {menus.title}
-                            <ChevronDown className="h-5 w-5" />
-                          </button >
-                        </>
+                        <button onClick={() => openMobileSubmenu(menus.title)} className="flex items-center justify-between nav-link" key={index}>
+                          {menus.title}
+                          <ChevronDown className="h-5 w-5" />
+                        </button >
                       )
                     )
                     )}
