@@ -96,7 +96,7 @@ const Navbar = () => {
           {/* Action Buttons & Mobile Menu Toggle */}
           <div className={cn("flex items-center gap-3")}>
             <Button className="hidden lg:flex" size="lg">
-              Get a quote
+              Get a Quote
             </Button>
             <div className='flex lg:hidden cursor-pointer'>
               <Hamburger toggled={mobileMenuOpen} toggle={setMobileMenuOpen} size={30} color="var(--primary)" rounded />
