@@ -16,7 +16,7 @@ import {
 import { Button } from '@/components/ui/shadcn/button'
 import { ArrowLeft, ChevronDown } from 'lucide-react'
 import * as Icons from 'lucide-react';
-import { navigationMenus } from '@/json_data/navigation.json'
+import { navigationMenusData } from '@/json/data.json'
 import { Fade as Hamburger } from 'hamburger-react'
 
 const Navbar = () => {
@@ -36,12 +36,12 @@ const Navbar = () => {
     setMobileSubmenu(null)
   }
 
-  const activeSubmenuData = navigationMenus.find(menu => menu.title === mobileSubmenu);
+  const activeSubmenuData = navigationMenusData.find(menu => menu.title === mobileSubmenu);
 
   return (
     <>
       <nav className={cn("w-full bg-background fixed inset-0 z-20 h-max")}>
-        <div className={cn("container mx-auto px-4 py-1 flex items-center justify-between")}>
+        <div className={cn("container mx-auto px-4 lg:px-6 py-1 flex items-center justify-between")}>
           <Link href="/">
             <Image src="/images/branding/logo.svg" width={200} height={83} priority alt='travel arrangers.ca' />
           </Link>
@@ -49,7 +49,7 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <NavigationMenu className='hidden lg:flex' viewport={false}>
             <NavigationMenuList>
-              {navigationMenus.map((menus, index) => (
+              {navigationMenusData.map((menus, index) => (
                 menus.dropdown ?
                   (
                     <NavigationMenuItem key={index}>
@@ -68,7 +68,7 @@ const Navbar = () => {
                                       </div>
                                       <div className="flex-1">
                                         <div className="text-foreground text-sm font-semibold leading-none">{menus.title}</div>
-                                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">{menus.description}</p>
+                                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground font-medium mt-1">{menus.description}</p>
                                       </div>
                                     </div>
                                   </Link>
@@ -95,7 +95,7 @@ const Navbar = () => {
 
           {/* Action Buttons & Mobile Menu Toggle */}
           <div className={cn("flex items-center gap-3")}>
-            <Button className="hidden lg:flex" size="lg">
+            <Button className="hidden lg:flex w-[166px]" size="lg">
               Get a Quote
             </Button>
             <div className='flex lg:hidden cursor-pointer'>
@@ -107,7 +107,7 @@ const Navbar = () => {
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
           <div className='lg:hidden fixed inset-0 bg-slate-900 z-50 overflow-y-auto'>
-            <div className='container px-4 mx-auto h-full'>
+            <div className='container mx-auto px-4 lg:px-6 h-full'>
               <div className="flex items-center py-1 justify-between border-b border-primary-foreground">
                 <Link href="/" onClick={closeMobileMenu}>
                   <Image src="/images/branding/logo.svg" width={200} height={83} priority alt='travel arrangers.ca' />
@@ -121,7 +121,7 @@ const Navbar = () => {
               <div className='py-7'>
                 {!mobileSubmenu ?
                   <div className="flex flex-col gap-6">
-                    {navigationMenus.map((menus, index) => (
+                    {navigationMenusData.map((menus, index) => (
                       !menus.dropdown ? (
                         <Link href={menus.href} className="nav-link" onClick={closeMobileMenu} key={index}>
                           {menus.title}

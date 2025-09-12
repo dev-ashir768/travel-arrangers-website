@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { montserrat } from "./fonts";
 import Navbar from "@/components/ui/foundations/common/navbar";
+import AnimatedBackground from "@/components/ui/foundations/common/animated-background";
+import Footer from "@/components/ui/foundations/common/footer";
 
 export const metadata: Metadata = {
   title: "Travel Arrangers Inc. | Trusted Travel Agency Mississauga",
@@ -15,11 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`antialiased ${montserrat.className} ${montserrat.variable}`}
-      >
+      <body className={`antialiased ${montserrat.className} ${montserrat.variable} relative overflow-x-hidden`}>
+        <AnimatedBackground />
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
