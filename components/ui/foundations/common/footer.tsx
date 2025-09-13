@@ -139,7 +139,7 @@ const Footer = () => {
             <div className="py-6">
               <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
                 <div className="text-white text-center text-base md:text-left">
-                  © {new Date().getFullYear()} Travel Arrangers Inc. | All Rights Reserved | Created by <Link href="ashirarif.com">Ashir Arif</Link>
+                  © {new Date().getFullYear()} Travel Arrangers Inc. | All Rights Reserved | Created by <Link href="#">Quantara</Link>
                 </div>
 
                 <div className="flex items-center space-x-6">
