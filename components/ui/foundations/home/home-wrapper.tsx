@@ -5,6 +5,7 @@ import HeroSection from './hero-section'
 import AboutUs from './about-us';
 import Services from './services';
 import Testimonials from './testimonials';
+import SpecialOffer from './special-offer';
 
 const HomeWrapper = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -21,6 +22,7 @@ const HomeWrapper = () => {
       <AboutUs />
       <Services />
       <Testimonials />
+      <SpecialOffer />
     </>
   )
 }
