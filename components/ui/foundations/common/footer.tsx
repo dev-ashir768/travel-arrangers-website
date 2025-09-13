@@ -1,28 +1,42 @@
 import React from 'react'
-import { Mail, Phone, MapPin, Shield } from 'lucide-react';
 import * as Icons from 'lucide-react';
+import { Mail, Phone, MapPin, Shield, Send } from 'lucide-react';
 import { FooterLinksData, SocialLinksData } from '@/json/data.json';
 import Link from 'next/link';
 import { Button } from '../../shadcn/button';
 import { Input } from '../../shadcn/input';
 import Image from 'next/image';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/shadcn/tooltip"
 
 const Footer = () => {
   return (
     <>
-      <footer className="bg-dark-blue text-white z-10">
+      <footer className="bg-dark-blue text-white ">
         <div className='container mx-auto px-4 lg:px-6'>
           {/* Newsletter Section */}
-          <div className="border-b border-white/10">
+          <div className="border-b border-primary-foreground/50">
             <div className="py-12">
               <div className="text-center">
                 <h3 className="text-2xl font-bold mb-4">Stay Updated with Travel Deals</h3>
                 <p className="text-white/80 mb-6 max-w-xl mx-auto">
                   Subscribe to our newsletter and be the first to know about exclusive deals, travel tips, and destination guides
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
-                  <Input type="email" className='border-white/20 bg-white/10 placeholder:text-white/60' placeholder="Enter your email address" />
-                  <Button className='sm:w-[166px] w-full' size="lg">Subscribe</Button>
+                <div className="flex flex-col max-w-md mx-auto">
+                  <div className='flex justify-between items-center gap-4 px-4 py-1.5 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-300 placeholder-white/60'>
+                    <Input type="email" className='bg-transparent border-0 focus:ring-0 h-full p-0 rounded-none focus-visible:ring-0' placeholder="Enter your email address" />
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Button className='' size="icon"><Send /></Button>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>Subscribe</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </div>
                 </div>
               </div>
             </div>
@@ -91,7 +105,7 @@ const Footer = () => {
             </div>
 
             {/* Business Hours */}
-            <div className="mt-12 pt-8 border-t border-white/10">
+            <div className="mt-12 pt-8 border-t border-primary-foreground/50">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
                 <div className='h-full'>
                   <h4 className="font-semibold mb-4 text-primary text-lg">Business Hours</h4>
@@ -135,16 +149,16 @@ const Footer = () => {
           </div>
 
           {/* Bottom Footer */}
-          <div className="border-t border-white/10">
+          <div className="border-t border-primary-foreground/50">
             <div className="py-6">
               <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-                <div className="text-white text-center text-base md:text-left">
+                <div className="text-white text-center text-sm md:text-left">
                   © {new Date().getFullYear()} Travel Arrangers Inc. | All Rights Reserved | Created by <Link href="#">Quantara</Link>
                 </div>
 
                 <div className="flex items-center space-x-6">
-                  <Link href="#" className="footer-nav-link">Privacy Policy</Link>
-                  <Link href="#" className="footer-nav-link">Terms of Service</Link>
+                  <Link href="#" className="footer-nav-link !text-sm">Privacy Policy</Link>
+                  <Link href="#" className="footer-nav-link !text-sm">Terms of Service</Link>
                 </div>
               </div>
             </div>

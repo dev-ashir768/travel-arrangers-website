@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import HeroSection from './hero-section'
 import AboutUs from './about-us';
 import Services from './services';
+import Testimonials from './testimonials';
 
 const HomeWrapper = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -19,6 +20,7 @@ const HomeWrapper = () => {
       <HeroSection scrollY={scrollY} />
       <AboutUs />
       <Services />
+      <Testimonials />
     </>
   )
 }

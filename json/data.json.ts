@@ -4,6 +4,7 @@ import {
   NavigationType,
   ServicesType,
   SocialLinksType,
+  TestimonialsType,
 } from "@/type/global.types";
 
 export const navigationMenusData: NavigationType[] = [
@@ -241,7 +242,49 @@ export const FooterLinksData: FooterLinksType = {
 
 export const SocialLinksData: SocialLinksType[] = [
   { icon: "Facebook", href: "#", label: "Facebook" },
-  { icon: "Twitter", href: "#", label: "Twitter" },
   { icon: "Instagram", href: "#", label: "Instagram" },
   { icon: "Youtube", href: "#", label: "YouTube" },
 ];
+
+export const TestimonialsData: TestimonialsType[] = [
+    {
+      name: 'Sarah Johnson',
+      location: 'Toronto, ON',
+      rating: 5,
+      text: 'They handled everything perfectly — from flights to hotels. Hassle-free from start to finish! The attention to detail and personalized service made our family vacation absolutely perfect.',
+      trip: 'Family Vacation to Europe',
+      avatar: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150'
+    },
+    {
+      name: 'Michael Chen',
+      location: 'Vancouver, BC',
+      rating: 5,
+      text: 'Professional, friendly, and reliable. Our family vacation was flawless. The team went above and beyond to ensure every detail was perfect, and their expertise really showed.',
+      trip: 'Disney World Package',
+      avatar: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150'
+    },
+    {
+      name: 'Jennifer Martinez',
+      location: 'Calgary, AB',
+      rating: 5,
+      text: 'For both personal and corporate bookings, I trust them every time. Their corporate travel solutions have saved our company time and money while ensuring our team travels comfortably.',
+      trip: 'Corporate Travel Management',
+      avatar: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=150'
+    },
+    {
+      name: 'David Thompson',
+      location: 'Ottawa, ON',
+      rating: 5,
+      text: 'Exceptional service from start to finish. They found us the perfect honeymoon package within our budget and made sure every moment was magical. Highly recommend!',
+      trip: 'Honeymoon in Bali',
+      avatar: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150'
+    },
+    {
+      name: 'Lisa Wang',
+      location: 'Montreal, QC',
+      rating: 5,
+      text: 'Their travel insurance saved us when we had to cancel our trip due to illness. The claims process was smooth and they supported us throughout. True professionals!',
+      trip: 'European River Cruise',
+      avatar: 'https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=150'
+    },
+  ];

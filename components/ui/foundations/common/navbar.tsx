@@ -108,7 +108,7 @@ const Navbar = () => {
         {mobileMenuOpen && (
           <div className='lg:hidden fixed inset-0 bg-slate-900 z-50 overflow-y-auto'>
             <div className='container mx-auto px-4 lg:px-6 h-full'>
-              <div className="flex items-center py-1 justify-between border-b border-primary-foreground">
+              <div className="flex items-center py-1 justify-between border-b border-primary-foreground/50">
                 <Link href="/" onClick={closeMobileMenu}>
                   <Image src="/images/branding/logo.svg" width={200} height={83} priority alt='travel arrangers.ca' />
                 </Link>

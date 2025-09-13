@@ -28,10 +28,19 @@ export type FooterLinksType = {
   Destinations: string[];
   Support: string[];
   Company: string[];
-}
+};
 
 export type SocialLinksType = {
   icon: string;
   href: string;
   label: string;
+};
+
+export type TestimonialsType = {
+  name: string;
+  location: string;
+  rating: number;
+  text: string;
+  trip: string;
+  avatar: string;
 };
