@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
 import "./globals.css";
+import type { Metadata } from "next";
 import { montserrat } from "./fonts";
 import Navbar from "@/components/ui/foundations/common/navbar";
-import AnimatedBackground from "@/components/ui/foundations/common/animated-background";
 import Footer from "@/components/ui/foundations/common/footer";
+import NextTopLoader from 'nextjs-toploader';
 
 export const metadata: Metadata = {
   title: "Travel Arrangers Inc. | Trusted Travel Agency Mississauga",
@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased ${montserrat.className} ${montserrat.variable} relative overflow-x-hidden`}>
-        <AnimatedBackground />
+        <NextTopLoader crawlSpeed={200} color="var(--primary)" showSpinner={true} easing="ease" />
         <Navbar />
         {children}
         <Footer />

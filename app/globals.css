@@ -51,6 +51,8 @@
   --animate-fadeInUp-delay-2: fadeInUp 1s ease-out 1s both;
   --animate-twinkle: twinkle 2s ease-in-out infinite;
   --animate-dash: dash 10s linear infinite;
+  --animate-marquee: marquee var(--duration) infinite linear;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
 
   @keyframes float {
 
@@ -97,6 +99,26 @@
 
     to {
       stroke-dashoffset: -100;
+    }
+  }
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
     }
   }
 }
@@ -183,9 +205,9 @@
 }
 
 .nav-link {
-  @apply text-white lg:text-foreground hover:!text-primary hover:!bg-transparent !bg-transparent text-xl lg:!text-base !cursor-pointer transition-colors duration-200
+  @apply text-white lg:text-foreground hover:!text-primary hover:!bg-transparent !bg-transparent !text-base !cursor-pointer transition-colors duration-200;
 }
 
 .footer-nav-link {
-  @apply  text-white text-base font-medium hover:text-primary transition-colors duration-300
+  @apply text-white text-base font-normal hover:text-primary transition-colors duration-300;
 }

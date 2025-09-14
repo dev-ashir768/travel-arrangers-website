@@ -1,10 +1,9 @@
 "use client"
 
-import { FeaturesData } from '@/json/data.json';
-import { Users } from 'lucide-react';
-import * as Icons from 'lucide-react'
 import React, { useEffect, useState } from 'react'
 import { Button } from '../../shadcn/button';
+import SectionBadge from '../common/section-badge';
+import Image from 'next/image';
 
 const AboutUs = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -21,7 +20,7 @@ const AboutUs = () => {
 
   return (
     <>
-      <section id="about-section" className="py-20 bg-white relative overflow-hidden">
+      <section id="about-section" className="lg:py-20 py-16 bg-secondary relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0">
           {[...Array(15)].map((_, i) => (
@@ -38,15 +37,12 @@ const AboutUs = () => {
         </div>
 
         <div className="relative container mx-auto px-4 lg:px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-16 gap-12 items-center">
             {/* Content */}
             <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'}`}>
-              <div className="inline-flex items-center bg-primary/10 rounded-full px-4 py-2 mb-6">
-                <Users className="h-5 w-5 text-primary mr-2" />
-                <span className="text-primary font-semibold xs:text-base text-sm">About Travel Arrangers Inc.</span>
-              </div>
+              <SectionBadge title='About Travel Arrangers Inc.' variant='primary' className='mb-4 lg:mb-6' />
 
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 lg:mb-6">
                 More Than Travel Agents{' '}
                 <span className="text-primary">We&apos;re Your Journey Partners</span>
               </h2>
@@ -61,12 +57,12 @@ const AboutUs = () => {
                 paired with personalized service that big-box booking sites simply can&apos;t match.
               </p>
 
-              <div className="grid grid-cols-2 gap-6 mb-8">
-                <div className="text-center p-4 bg-secondary rounded-xl">
+              <div className="grid grid-cols-2 gap-4 lg-gap-6 mb-8">
+                <div className="text-center p-4 bg-secondary rounded-md lg:rounded-xl">
                   <div className="text-3xl font-bold text-primary mb-2">2001</div>
                   <div className="text-muted-foreground font-medium">Established</div>
                 </div>
-                <div className="text-center p-4 bg-secondary rounded-xl">
+                <div className="text-center p-4 bg-secondary rounded-md lg:rounded-xl">
                   <div className="text-3xl font-bold text-primary mb-2">1000+</div>
                   <div className="text-muted-foreground font-medium">Hotel Partners</div>
                 </div>
@@ -79,30 +75,57 @@ const AboutUs = () => {
             </div>
 
             {/* Features Grid */}
-            <div className={`transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-x-0 opacity-100' : 'translate-x-20 opacity-0'}`}>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {FeaturesData.map((feature, index) => {
-                  const Icon = Icons[feature.icon as keyof typeof Icons] as React.ElementType
-                  return (
-                    <div
-                      key={feature.title}
-                      className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-secondary/50"
-                      style={{ animationDelay: `${index * 100}ms` }}
-                    >
-                      <div className={`relative w-14 h-14 rounded-xl bg-gradient-to-br ${feature.color} flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
-                        <Icon className="h-7 w-7 text-white" />
-                        <div className="absolute -inset-1 bg-gradient-to-br from-primary/20 to-red-600/20 rounded-xl opacity-0 group-hover:opacity-100 blur transition-all duration-300"></div>
-                      </div>
+            <div className={`h-full transform transition-all duration-1000 delay-300 ${isVisible ? "translate-x-0 opacity-100" : "translate-x-20 opacity-0"}`}>
+              <div className="h-full grid grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 min-h-[400px] lg:min-h-[500px]">
+                <div className="group col-span-2 row-span-2 h-full">
+                  <div className='relative z-10 h-full lg:rounded-xl rounded-md overflow-hidden'>
+                    <Image
+                      src="/images/others/about-2.jpg"
+                      className="object-cover object-left w-full h-full group-hover:scale-110 transition-transform duration-700"
+                      width={500}
+                      height={400}
+                      alt="plane-with-bags"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
-                      <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
-                        {feature.title}
-                      </h3>
-                      <p className="text-muted-foreground font-medium text-sm leading-relaxed">
-                        {feature.description}
-                      </p>
+                    <div className="absolute bottom-4 inset-x-4 rounded-md bg-primary-foreground backdrop-blur-sm px-3 py-2 flex flex-col justify-center items-start transform group-hover:translate-y-0 translate-y-25 transition-transform duration-300">
+                      <h6 className="text-base font-semibold text-foreground">Worldwide Travel</h6>
+                      <p className="text-sm font-medium text-muted-foreground">Access to exclusive destinations and premium airline partnerships globally</p>
                     </div>
-                  )
-                })}
+                  </div>
+                </div>
+                <div className="group col-span-1 h-full">
+                  <div className='relative z-10 h-full lg:rounded-xl rounded-md overflow-hidden'>
+                    <Image
+                      src="/images/others/about-3.jpg"
+                      className="object-cover object-center w-full h-full group-hover:scale-110 transition-transform duration-700"
+                      width={500}
+                      height={400}
+                      alt="plane-with-bags"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute bottom-4 inset-x-4 rounded-md bg-primary-foreground backdrop-blur-sm px-3 py-2 flex flex-col justify-center items-start transform group-hover:translate-y-0 translate-y-25 transition-transform duration-300">
+                      <h6 className="text-base font-semibold text-foreground">1000+ Hotels</h6>
+                      <p className="text-sm font-medium text-muted-foreground">Premium Partners</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="group col-span-1 h-full">
+                  <div className='relative z-10 h-full lg:rounded-xl rounded-md overflow-hidden'>
+                    <Image
+                      src="/images/others/about-1.jpg"
+                      className="object-cover object-right w-full h-full group-hover:scale-110 transition-transform duration-700"
+                      width={500}
+                      height={400}
+                      alt="plane-with-bags"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute bottom-4 inset-x-4 rounded-md bg-primary-foreground backdrop-blur-sm px-3 py-2 flex flex-col justify-center items-start transform group-hover:translate-y-0 translate-y-25 transition-transform duration-300">
+                      <h6 className="text-base font-semibold text-foreground">Easy Booking</h6>
+                      <p className="text-sm font-medium text-muted-foreground">24/7 Support</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

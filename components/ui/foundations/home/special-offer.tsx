@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react'
 import { Gift, Clock, Sparkles } from 'lucide-react';
+import SectionBadge from '../common/section-badge';
 
 const SpecialOffer = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -77,36 +78,36 @@ const SpecialOffer = () => {
           <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
             }`}>
             {/* Badge */}
-            <div className="inline-flex items-center bg-white/20 backdrop-blur-md rounded-full px-6 py-3 mb-6 border border-white/30 animate-pulse">
-              <Gift className="h-5 w-5 text-white mr-2" />
-              <span className="text-white font-semibold">Limited Time Offer</span>
+            <SectionBadge title='Limited Time Offer' variant='secondary' className='mb-4 lg:mb-6' />
+
+            <div className='mb-12 lg:mb-14'>
+              <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 lg:mb-6">
+                Exclusive Seasonal Deals!
+              </h2>
+
+              <p className="text-lg text-primary-foreground font-medium leading-relaxed max-w-2xl mx-auto">
+                Book now and get access to exclusive seasonal deals on flights and vacation packages!
+                Save up to 40% on your next adventure.
+              </p>
             </div>
 
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Exclusive Seasonal Deals!
-            </h2>
-
-            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-              Book now and get access to exclusive seasonal deals on flights and vacation packages!
-              Save up to 40% on your next adventure.
-            </p>
-
             {/* Countdown Timer */}
-            <div className="grid lg:grid-cols-4 grid-cols-2 gap-6 mx-auto max-w-lg mb-12">
+            <div className="grid grid-cols-4 gap-4 lg-gap-6 mx-auto max-w-lg mb-8">
               {Object.entries(timeLeft).map(([unit, value]) => (
                 <div key={unit} className="bg-white/20 backdrop-blur-md rounded-2xl p-4 border border-white/30 min-w-[80px]">
                   <div className="text-3xl md:text-4xl font-bold text-white mb-1">
                     {value.toString().padStart(2, '0')}
                   </div>
-                  <div className="text-white/80 text-sm uppercase tracking-wide">
-                    {unit}
+                  <div className="text-primary-foreground text-sm uppercase tracking-wide">
+                    <span className='hidden lg:block'>{unit}</span>
+                    <span className='block lg:hidden'>{unit.substring(0, 1)}</span>
                   </div>
                 </div>
               ))}
             </div>
 
             {/* Offer Details */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 lg-gap-6 mb-8">
               <div className="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/30 hover:bg-white/20 transition-all duration-300 hover:-translate-y-2">
                 <div className="text-3xl font-bold text-white mb-2">40%</div>
                 <div className="text-white/90 font-medium">Off Vacation Packages</div>
@@ -122,7 +123,7 @@ const SpecialOffer = () => {
             </div>
 
             {/* Terms */}
-            <p className="text-white/70 text-sm mt-8 max-w-2xl mx-auto">
+            <p className="text-primary-foreground text-sm mt-8 max-w-2xl mx-auto">
               *Offer valid until the countdown expires. Terms and conditions apply.
               Cannot be combined with other offers. Subject to availability.
             </p>

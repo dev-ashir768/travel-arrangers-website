@@ -3,6 +3,7 @@
 import React from 'react'
 import { MapPin, Phone } from 'lucide-react'
 import { Button } from '../../shadcn/button'
+import SectionBadge from '../common/section-badge'
 
 interface HeroSectionProps {
   scrollY: number
@@ -50,22 +51,19 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY }) => {
         {/* Main Content */}
         <div className="relative z-10 text-center container mx-auto px-4 lg:px-6">
           <div className="animate-fadeInUp">
-            {/* TICO Badge */}
-            <div className="inline-flex items-center bg-white/20 backdrop-blur-md rounded-full px-6 py-2 mb-6 border border-white/30 animate-fadeInUp">
-              <span className="text-white/90 font-medium xs:text-base text-sm">✈ TICO Licensed • Trusted Since 2001</span>
-            </div>
+            <SectionBadge title='✈ TICO Licensed • Trusted Since 2001' variant='secondary' className='mb-4 lg:mb-6' />
 
             <h1 className="max-w-5xl mx-auto text-3xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-red-400 animate-pulse">Travel{" "}</span>Made Simple,
               Memories Made Forever
             </h1>
 
-            <p className="text-lg md:text-2xl text-white/90 mb-8 max-w-2xl mx-auto leading-relaxed animate-fadeInUp-delay">
+            <p className="text-lg md:text-2xl text-primary-foreground mb-8 max-w-2xl mx-auto leading-relaxed animate-fadeInUp-delay">
               Mississauga&apos;s trusted travel agency. Since 2001, we&apos;ve been booking flights,
               vacations, and corporate travel with expertise and care.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fadeInUp-delay-2 mb-12">
+            <div className="flex flex-col sm:flex-row gap-4 lg-gap-6 justify-center items-center animate-fadeInUp-delay-2 mb-12">
               <div className='relative sm:w-max w-full'>
                 <Button className='sm:w-[166px] w-full' size="lg">Book Your Trip</Button>
                 <span className='absolute top-0 right-0 w-3 h-3 rounded-full animate-ping bg-gradient-to-r from-white to-primary'></span>
@@ -74,7 +72,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY }) => {
             </div>
 
             {/* Contact Info */}
-            <div className="flex flex-col xs:flex-row gap-6 justify-center items-center text-white/80 animate-fadeInUp-delay-2">
+            <div className="flex flex-col xs:flex-row gap-4 lg-gap-6 justify-center items-center text-primary-foreground animate-fadeInUp-delay-2">
               <div className="flex items-center space-x-2">
                 <Phone className="h-5 w-5 text-primary" />
                 <span className="font-medium">(905) 267-9262</span>
@@ -90,7 +88,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY }) => {
           <div className="absolute top-10 xl:top-20 right-10 hidden lg:block animate-float">
             <div className="bg-white/20 backdrop-blur-md rounded-2xl p-6 border border-white/30">
               <div className="text-3xl font-bold text-white">20+</div>
-              <div className="text-white/80 text-sm">Years Experience</div>
+              <div className="text-primary-foreground text-sm">Years Experience</div>
             </div>
           </div>
 

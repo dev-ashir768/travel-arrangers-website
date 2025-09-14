@@ -1,9 +1,9 @@
-export type NavigationType = {
+export type NavigationMenusType = {
   title: string;
   description: string;
   icon: string | null;
   dropdown: boolean;
-  item: NavigationType[] | null;
+  item: NavigationMenusType[] | null;
   href: string;
 };
 
@@ -14,19 +14,24 @@ export type FeaturesType = {
   color: string;
 };
 
+export type AboutUsMediaGridType = {
+  type: "image" | "video";
+  src: string;
+  alt: string;
+  title: string;
+  description: string;
+};
+
 export type ServicesType = {
   icon: string;
   title: string;
   description: string;
   features: string[];
-  color: string;
-  bgColor: string;
 };
 
 export type FooterLinksType = {
   Services: string[];
-  Destinations: string[];
-  Support: string[];
+  Experiences: string[];
   Company: string[];
 };
 
@@ -44,3 +49,23 @@ export type TestimonialsType = {
   trip: string;
   avatar: string;
 };
+
+export type DestinationsType = {
+  name: string;
+  country: string;
+  price: string;
+  image: string;
+  rating: number;
+  description: string;
+};
+
+export type StatKey = "flights" | "customers" | "destinations" | "satisfaction";
+
+export type StatsType = {
+  key: StatKey;
+  label: string;
+  value: number;
+  suffix: string;
+};
+
+export type AirlinePartnersType = { id: number; airline: string };

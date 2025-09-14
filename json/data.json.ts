@@ -1,13 +1,17 @@
 import {
+  AboutUsMediaGridType,
+  AirlinePartnersType,
+  DestinationsType,
   FeaturesType,
   FooterLinksType,
-  NavigationType,
+  NavigationMenusType,
   ServicesType,
   SocialLinksType,
+  StatsType,
   TestimonialsType,
 } from "@/type/global.types";
 
-export const navigationMenusData: NavigationType[] = [
+export const NavigationMenusData: NavigationMenusType[] = [
   {
     title: "Home",
     description: "Welcome to our travel services",
@@ -17,7 +21,7 @@ export const navigationMenusData: NavigationType[] = [
     href: "/",
   },
   {
-    title: "Travel Services",
+    title: "Services",
     description: "Explore our travel solutions",
     icon: null,
     dropdown: true,
@@ -33,68 +37,164 @@ export const navigationMenusData: NavigationType[] = [
       },
       {
         title: "Travel Insurance",
-        description: "Protect your journey",
+        description: "Protect your journey with our plans",
         icon: "ShieldCheck",
         dropdown: false,
         item: null,
         href: "/travel-insurance",
       },
       {
-        title: "Cruises",
-        description: "Luxury cruise experiences",
-        icon: "Sailboat",
-        dropdown: false,
-        item: null,
-        href: "/cruises",
-      },
-      {
-        title: "Rail Europe",
-        description: "Explore Europe by rail",
-        icon: "TrainTrack",
-        dropdown: false,
-        item: null,
-        href: "/rail-europe",
-      },
-    ],
-  },
-  {
-    title: "Special Packages",
-    description: "Unique travel packages",
-    icon: null,
-    dropdown: true,
-    href: "#",
-    item: [
-      {
-        title: "Disney Vacations",
-        description: "Magical Disney holiday packages",
-        icon: "Castle",
-        dropdown: false,
-        item: null,
-        href: "/disney-vacations",
-      },
-      {
         title: "Umrah & Hajj",
-        description: "Spiritual travel arrangements",
-        icon: "Heart",
+        description: "Spiritual journeys to Mecca & Medina",
+        icon: "Moon",
         dropdown: false,
         item: null,
         href: "/umrah-hajj",
       },
       {
-        title: "Destawed",
-        description: "Special destination packages",
-        icon: "MapPin",
-        dropdown: false,
-        item: null,
-        href: "/destawed",
-      },
-      {
         title: "Ashura Travel",
-        description: "Customized Ashura travel",
-        icon: "Calendar",
+        description: "Ziyarat trips to Iraq & Iran",
+        icon: "Users",
         dropdown: false,
         item: null,
         href: "/ashura-travel",
+      },
+      {
+        title: "Rail Europe",
+        description: "Explore the European continent by train",
+        icon: "TrainTrack",
+        dropdown: false,
+        item: null,
+        href: "/rail-europe",
+      },
+      {
+        title: "Visa Services",
+        description: "Hassle-free visa processing for you",
+        icon: "Stamp",
+        dropdown: false,
+        item: null,
+        href: "/visa-services",
+      },
+    ],
+  },
+  {
+    title: "Destinations",
+    description: "Explore our top travel destinations.",
+    icon: null,
+    dropdown: true,
+    href: "#",
+    item: [
+      {
+        title: "London",
+        description: "Historic charm, modern vibe.",
+        icon: "MapPin",
+        dropdown: false,
+        item: null,
+        href: "/destinations/london",
+      },
+      {
+        title: "Istanbul",
+        description: "Where East truly meets West.",
+        icon: "MapPin",
+        dropdown: false,
+        item: null,
+        href: "/destinations/istanbul",
+      },
+      {
+        title: "Bali",
+        description: "The tropical island of gods.",
+        icon: "MapPin",
+        dropdown: false,
+        item: null,
+        href: "/destinations/bali",
+      },
+      {
+        title: "New York",
+        description: "The city that never sleeps.",
+        icon: "MapPin",
+        dropdown: false,
+        item: null,
+        href: "/destinations/new-york",
+      },
+      {
+        title: "Karachi",
+        description: "Pakistan's vibrant city of lights.",
+        icon: "MapPin",
+        dropdown: false,
+        item: null,
+        href: "/destinations/karachi",
+      },
+      {
+        title: "Bangkok",
+        description: "Bustling markets, ornate shrines.",
+        icon: "MapPin",
+        dropdown: false,
+        item: null,
+        href: "/destinations/bangkok",
+      },
+      {
+        title: "Mumbai",
+        description: "The heart of Bollywood cinema.",
+        icon: "MapPin",
+        dropdown: false,
+        item: null,
+        href: "/destinations/mumbai",
+      },
+      {
+        title: "Dubai",
+        description: "Luxury shopping & modern marvels.",
+        icon: "MapPin",
+        dropdown: false,
+        item: null,
+        href: "/destinations/dubai",
+      },
+      {
+        title: "Tehran",
+        description: "A bustling city with history.",
+        icon: "MapPin",
+        dropdown: false,
+        item: null,
+        href: "/destinations/tehran",
+      },
+      {
+        title: "Johannesburg",
+        description: "South Africa's vibrant hub.",
+        icon: "MapPin",
+        dropdown: false,
+        item: null,
+        href: "/destinations/johannesburg",
+      },
+      {
+        title: "Colombo",
+        description: "Port city with colonial charm.",
+        icon: "MapPin",
+        dropdown: false,
+        item: null,
+        href: "/destinations/colombo",
+      },
+      {
+        title: "Delhi",
+        description: "India's bustling capital city.",
+        icon: "MapPin",
+        dropdown: false,
+        item: null,
+        href: "/destinations/delhi",
+      },
+      {
+        title: "Jeddah",
+        description: "Major port city on the Red Sea.",
+        icon: "MapPin",
+        dropdown: false,
+        item: null,
+        href: "/destinations/jeddah",
+      },
+      {
+        title: "Dhaka",
+        description: "The capital of Bangladesh.",
+        icon: "MapPin",
+        dropdown: false,
+        item: null,
+        href: "/destinations/dhaka",
       },
     ],
   },
@@ -143,34 +243,31 @@ export const FeaturesData: FeaturesType[] = [
   },
 ];
 
+export const AboutUsMediaGridData: AboutUsMediaGridType[] = [
+  {
+    type: "image",
+    src: "/professional-woman-working-on-laptop-in-modern-off.jpg",
+    alt: "Professional woman working on laptop",
+    title: "Focused Work",
+    description: "Creating amazing digital experiences",
+  },
+  {
+    type: "video",
+    src: "/placeholder-66vth.png",
+    alt: "Professional woman in green hijab",
+    title: "Team Member",
+    description: "Bringing creativity to life",
+  },
+  {
+    type: "image",
+    src: "/placeholder-i8dg4.png",
+    alt: "Team member in office",
+    title: "Collaboration",
+    description: "Working together for success",
+  },
+];
+
 export const ServicesData: ServicesType[] = [
-  {
-    icon: "Plane",
-    title: "Flights & Ticketing",
-    description:
-      "Competitive fares and flexible booking options for all your travel needs.",
-    features: [
-      "Domestic & International",
-      "Business Class Options",
-      "Group Bookings",
-      "Last Minute Deals",
-    ],
-    color: "from-blue-500 to-blue-600",
-    bgColor: "bg-blue-50",
-  },
-  {
-    icon: "Package",
-    title: "Vacation Packages",
-    description: "From Disney magic to exotic escapes in Bali and beyond.",
-    features: [
-      "All-Inclusive Resorts",
-      "Disney Packages",
-      "European Tours",
-      "Custom Itineraries",
-    ],
-    color: "from-green-500 to-green-600",
-    bgColor: "bg-green-50",
-  },
   {
     icon: "Building",
     title: "Corporate Travel",
@@ -181,21 +278,6 @@ export const ServicesData: ServicesType[] = [
       "Expense Reporting",
       "Policy Setup",
     ],
-    color: "from-purple-500 to-purple-600",
-    bgColor: "bg-purple-50",
-  },
-  {
-    icon: "Hotel",
-    title: "Hotels & Resorts",
-    description: "Access to over 1,000+ trusted properties worldwide.",
-    features: [
-      "Luxury Hotels",
-      "Budget Options",
-      "Resort Bookings",
-      "Extended Stay",
-    ],
-    color: "from-orange-500 to-orange-600",
-    bgColor: "bg-orange-50",
   },
   {
     icon: "Shield",
@@ -207,37 +289,79 @@ export const ServicesData: ServicesType[] = [
       "Baggage Protection",
       "Emergency Support",
     ],
-    color: "from-red-500 to-red-600",
-    bgColor: "bg-red-50",
+  },
+  {
+    icon: "Moon",
+    title: "Umrah & Hajj",
+    description: "Complete, spiritually-fulfilling pilgrimage packages.",
+    features: [
+      "Guided Tours",
+      "Visa Processing",
+      "Premium Accommodations",
+      "Ground Transportation",
+    ],
+  },
+  {
+    icon: "Users",
+    title: "Ashura Travel",
+    description:
+      "Organized Ziyarat trips to sacred destinations in Iraq & Iran.",
+    features: [
+      "Group Ziyarat Packages",
+      "Experienced Local Guides",
+      "All-inclusive Services",
+      "Secure Arrangements",
+    ],
+  },
+  {
+    icon: "Train",
+    title: "Rail Europe",
+    description: "Explore Europe's scenic landscapes by train with ease.",
+    features: [
+      "Eurail Passes",
+      "Point-to-Point Tickets",
+      "High-Speed Trains",
+      "Scenic Routes",
+    ],
+  },
+  {
+    icon: "Stamp",
+    title: "Visa Services",
+    description: "Hassle-free visa application and processing assistance.",
+    features: [
+      "Application Assistance",
+      "Document Verification",
+      "Appointment Scheduling",
+      "Fast Processing",
+    ],
   },
 ];
 
 export const FooterLinksData: FooterLinksType = {
   Services: [
-    "Flight Bookings",
-    "Vacation Packages",
     "Corporate Travel",
-    "Hotel Reservations",
     "Travel Insurance",
+    "Umrah & Hajj",
+    "Ashura Travel",
+    "Rail Europe",
     "Visa Services",
   ],
-  Destinations: [
+  Experiences: [
+    "Disney Vacations",
+    "Cruises",
+    "Destawed",
     "Europe Tours",
-    "Asian Adventures",
-    "Caribbean Getaways",
-    "Disney Packages",
-    "Cruise Packages",
+    "Vacation Packages",
     "All-Inclusive Resorts",
   ],
-  Support: [
-    "Contact Us",
+  Company: [
+    "About",
+    "Contact",
     "Travel Tips",
     "Booking Policy",
     "Terms & Conditions",
-    "Privacy Policy",
     "TICO Information",
   ],
-  Company: ["About Us", "Contact Us", "Travel Blog"],
 };
 
 export const SocialLinksData: SocialLinksType[] = [
@@ -247,44 +371,226 @@ export const SocialLinksData: SocialLinksType[] = [
 ];
 
 export const TestimonialsData: TestimonialsType[] = [
-    {
-      name: 'Sarah Johnson',
-      location: 'Toronto, ON',
-      rating: 5,
-      text: 'They handled everything perfectly — from flights to hotels. Hassle-free from start to finish! The attention to detail and personalized service made our family vacation absolutely perfect.',
-      trip: 'Family Vacation to Europe',
-      avatar: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150'
-    },
-    {
-      name: 'Michael Chen',
-      location: 'Vancouver, BC',
-      rating: 5,
-      text: 'Professional, friendly, and reliable. Our family vacation was flawless. The team went above and beyond to ensure every detail was perfect, and their expertise really showed.',
-      trip: 'Disney World Package',
-      avatar: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150'
-    },
-    {
-      name: 'Jennifer Martinez',
-      location: 'Calgary, AB',
-      rating: 5,
-      text: 'For both personal and corporate bookings, I trust them every time. Their corporate travel solutions have saved our company time and money while ensuring our team travels comfortably.',
-      trip: 'Corporate Travel Management',
-      avatar: 'https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=150'
-    },
-    {
-      name: 'David Thompson',
-      location: 'Ottawa, ON',
-      rating: 5,
-      text: 'Exceptional service from start to finish. They found us the perfect honeymoon package within our budget and made sure every moment was magical. Highly recommend!',
-      trip: 'Honeymoon in Bali',
-      avatar: 'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150'
-    },
-    {
-      name: 'Lisa Wang',
-      location: 'Montreal, QC',
-      rating: 5,
-      text: 'Their travel insurance saved us when we had to cancel our trip due to illness. The claims process was smooth and they supported us throughout. True professionals!',
-      trip: 'European River Cruise',
-      avatar: 'https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=150'
-    },
-  ];
+  {
+    name: "Sarah Johnson",
+    location: "Toronto, ON",
+    rating: 5,
+    text: "They handled everything perfectly — from flights to hotels. Hassle-free from start to finish! The attention to detail and personalized service made our family vacation absolutely perfect.",
+    trip: "Family Vacation to Europe",
+    avatar:
+      "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150",
+  },
+  {
+    name: "Michael Chen",
+    location: "Vancouver, BC",
+    rating: 5,
+    text: "Professional, friendly, and reliable. Our family vacation was flawless. The team went above and beyond to ensure every detail was perfect, and their expertise really showed.",
+    trip: "Disney World Package",
+    avatar:
+      "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=150",
+  },
+  {
+    name: "Jennifer Martinez",
+    location: "Calgary, AB",
+    rating: 5,
+    text: "For both personal and corporate bookings, I trust them every time. Their corporate travel solutions have saved our company time and money while ensuring our team travels comfortably.",
+    trip: "Corporate Travel Management",
+    avatar:
+      "https://images.pexels.com/photos/1181686/pexels-photo-1181686.jpeg?auto=compress&cs=tinysrgb&w=150",
+  },
+  {
+    name: "David Thompson",
+    location: "Ottawa, ON",
+    rating: 5,
+    text: "Exceptional service from start to finish. They found us the perfect honeymoon package within our budget and made sure every moment was magical. Highly recommend!",
+    trip: "Honeymoon in Bali",
+    avatar:
+      "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=150",
+  },
+  {
+    name: "Lisa Wang",
+    location: "Montreal, QC",
+    rating: 5,
+    text: "Their travel insurance saved us when we had to cancel our trip due to illness. The claims process was smooth and they supported us throughout. True professionals!",
+    trip: "European River Cruise",
+    avatar:
+      "https://images.pexels.com/photos/1130626/pexels-photo-1130626.jpeg?auto=compress&cs=tinysrgb&w=150",
+  },
+];
+
+export const DestinationsData: DestinationsType[] = [
+  {
+    name: "London",
+    country: "UK",
+    price: "$549",
+    image:
+      "https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg?auto=compress&cs=tinysrgb&w=600",
+    rating: 4.8,
+    description: "Historic charm and modern culture",
+  },
+  {
+    name: "Istanbul",
+    country: "Turkey",
+    price: "$699",
+    image:
+      "https://images.pexels.com/photos/1549326/pexels-photo-1549326.jpeg?auto=compress&cs=tinysrgb&w=600",
+    rating: 4.9,
+    description: "Where East meets West",
+  },
+  {
+    name: "Bali",
+    country: "Indonesia",
+    price: "$999",
+    image:
+      "https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&w=600",
+    rating: 4.9,
+    description: "Island of gods, a tropical paradise",
+  },
+  {
+    name: "New York",
+    country: "USA",
+    price: "$649",
+    image:
+      "https://images.pexels.com/photos/378570/pexels-photo-378570.jpeg?auto=compress&cs=tinysrgb&w=600",
+    rating: 4.7,
+    description: "The city that never sleeps",
+  },
+  {
+    name: "Karachi",
+    country: "Pakistan",
+    price: "$299",
+    image:
+      "https://images.pexels.com/photos/1209978/pexels-photo-1209978.jpeg?auto=compress&cs=tinysrgb&w=600",
+    rating: 4.5,
+    description: "The vibrant city of lights",
+  },
+  {
+    name: "Bangkok",
+    country: "Thailand",
+    price: "$749",
+    image:
+      "https://images.pexels.com/photos/3975590/pexels-photo-3975590.jpeg?auto=compress&cs=tinysrgb&w=600",
+    rating: 4.8,
+    description: "Bustling markets and ornate shrines",
+  },
+  {
+    name: "Mumbai",
+    country: "India",
+    price: "$499",
+    image:
+      "https://images.pexels.com/photos/4173250/pexels-photo-4173250.jpeg?auto=compress&cs=tinysrgb&w=600",
+    rating: 4.6,
+    description: "The heart of the Bollywood film industry",
+  },
+  {
+    name: "Dubai",
+    country: "UAE",
+    price: "$799",
+    image:
+      "https://images.pexels.com/photos/1534560/pexels-photo-1534560.jpeg?auto=compress&cs=tinysrgb&w=600",
+    rating: 4.8,
+    description: "Luxury shopping and ultramodern architecture",
+  },
+  {
+    name: "Tehran",
+    country: "Iran",
+    price: "$450",
+    image:
+      "https://images.pexels.com/photos/12472957/pexels-photo-12472957.jpeg?auto=compress&cs=tinysrgb&w=600",
+    rating: 4.4,
+    description: "A bustling capital with rich history",
+  },
+  {
+    name: "Johannesburg",
+    country: "South Africa",
+    price: "$1099",
+    image:
+      "https://images.pexels.com/photos/2246476/pexels-photo-2246476.jpeg?auto=compress&cs=tinysrgb&w=600",
+    rating: 4.7,
+    description: "South Africa's biggest city and vibrant hub",
+  },
+  {
+    name: "Colombo",
+    country: "Sri Lanka",
+    price: "$599",
+    image:
+      "https://images.pexels.com/photos/10398086/pexels-photo-10398086.jpeg?auto=compress&cs=tinysrgb&w=600",
+    rating: 4.6,
+    description: "A port city with a rich colonial heritage",
+  },
+  {
+    name: "Delhi",
+    country: "India",
+    price: "$480",
+    image:
+      "https://images.pexels.com/photos/2362002/pexels-photo-2362002.jpeg?auto=compress&cs=tinysrgb&w=600",
+    rating: 4.7,
+    description: "India's capital territory and massive metro area",
+  },
+  {
+    name: "Jeddah",
+    country: "Saudi Arabia",
+    price: "$650",
+    image:
+      "https://images.pexels.com/photos/15720448/pexels-photo-15720448.jpeg?auto=compress&cs=tinysrgb&w=600",
+    rating: 4.5,
+    description: "A major port city on the Red Sea",
+  },
+  {
+    name: "Dhaka",
+    country: "Bangladesh",
+    price: "$420",
+    image:
+      "https://images.pexels.com/photos/17697746/pexels-photo-17697746/free-photo-of-shaheed-minar-in-dhaka.jpeg?auto=compress&cs=tinysrgb&w=600",
+    rating: 4.3,
+    description: "The capital city of Bangladesh",
+  },
+];
+
+export const StatsData: StatsType[] = [
+  { key: "flights", label: "Flights Booked", value: 2500000, suffix: "M+" },
+  { key: "customers", label: "Happy Customers", value: 50000, suffix: "K+" },
+  { key: "destinations", label: "Destinations", value: 500, suffix: "+" },
+  { key: "satisfaction", label: "Satisfaction Rate", value: 98, suffix: "%" },
+];
+
+export const AirlinePartnersData: AirlinePartnersType[] = [
+  { id: 1, airline: "air-france" },
+  {
+    id: 2,
+    airline: "american-airlines",
+  },
+  {
+    id: 3,
+    airline: "british-airways",
+  },
+  {
+    id: 4,
+    airline: "delta-airlines",
+  },
+  {
+    id: 5,
+    airline: "emirates-airlines",
+  },
+  {
+    id: 6,
+    airline: "etihad-airways",
+  },
+  { id: 7, airline: "lufthansa" },
+  {
+    id: 8,
+    airline: "qatar-airways",
+  },
+  {
+    id: 9,
+    airline: "turkish-airlines",
+  },
+  {
+    id: 10,
+    airline: "united-airlines",
+  },
+  {
+    id: 11,
+    airline: "pia",
+  },
+];

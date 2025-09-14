@@ -6,6 +6,11 @@ import AboutUs from './about-us';
 import Services from './services';
 import Testimonials from './testimonials';
 import SpecialOffer from './special-offer';
+import Destinations from './destinations';
+import Stats from './stats';
+import CTA from './cta';
+import AirlinePartner from './airline-partner';
+import AirlineVideo from './airline-video';
 
 const HomeWrapper = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -19,10 +24,15 @@ const HomeWrapper = () => {
   return (
     <>
       <HeroSection scrollY={scrollY} />
+      <AirlinePartner />
       <AboutUs />
       <Services />
+      <Destinations />
       <Testimonials />
       <SpecialOffer />
+      <AirlineVideo/>
+      <Stats />
+      <CTA />
     </>
   )
 }
