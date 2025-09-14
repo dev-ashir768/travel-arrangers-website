@@ -13,6 +13,19 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY }) => {
   return (
     <>
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          style={{ transform: `translateY(${scrollY * 0.3}px)` }}
+        >
+          <source
+            src="/videos/70-airlines.mp4"
+            type="video/mp4"
+          />
+        </video>
         {/* Parallax Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-dark-blue via-dark-blue/90 to-primary/20" style={{ transform: `translateY(${scrollY * 0.5}px)` }} />
 
