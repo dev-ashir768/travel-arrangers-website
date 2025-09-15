@@ -43,7 +43,7 @@ const SpecialOffer = () => {
   }, []);
   return (
     <>
-      <section id="special-offer-section" className="py-20 bg-gradient-to-r from-primary to-red-600 relative overflow-hidden">
+      <section id="special-offer-section" className="py-20 bg-gradient-to-r from-primary to-mid-night relative overflow-hidden">
         {/* Background Animation */}
         <div className="absolute inset-0">
           {[...Array(30)].map((_, i) => (

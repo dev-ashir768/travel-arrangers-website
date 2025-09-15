@@ -14,7 +14,7 @@ const AnimatedBackground = () => {
     <div className="fixed inset-0 z-0 overflow-hidden">
       {/* Gradient Background */}
       <div
-        className="absolute inset-0 bg-gradient-to-br from-dark-blue via-dark-blue/95 to-primary/10 transition-all duration-1000"
+        className="absolute inset-0 bg-gradient-to-br from-mid-night via-mid-night/95 to-primary/10 transition-all duration-1000"
         style={{ transform: `translateY(${scrollY * 0.4}px)` }}
       />
 

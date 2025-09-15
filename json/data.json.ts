@@ -15,7 +15,7 @@ export const NavigationMenusData: NavigationMenusType[] = [
   {
     title: "Home",
     description: "Welcome to our travel services",
-    icon: null,
+    path: null,
     dropdown: false,
     item: null,
     href: "/",
@@ -23,14 +23,14 @@ export const NavigationMenusData: NavigationMenusType[] = [
   {
     title: "Services",
     description: "Explore our travel solutions",
-    icon: null,
+    path: null,
     dropdown: true,
     href: "#",
     item: [
       {
         title: "Corporate Travel",
         description: "Tailored travel for businesses",
-        icon: "Briefcase",
+        path: "corporate-travel.jpg",
         dropdown: false,
         item: null,
         href: "/corporate-travel",
@@ -38,7 +38,7 @@ export const NavigationMenusData: NavigationMenusType[] = [
       {
         title: "Travel Insurance",
         description: "Protect your journey with our plans",
-        icon: "ShieldCheck",
+        path: "travel-insurance.jpg",
         dropdown: false,
         item: null,
         href: "/travel-insurance",
@@ -46,7 +46,7 @@ export const NavigationMenusData: NavigationMenusType[] = [
       {
         title: "Umrah & Hajj",
         description: "Spiritual journeys to Mecca & Medina",
-        icon: "Moon",
+        path: "umrah-n-hajj.jpg",
         dropdown: false,
         item: null,
         href: "/umrah-hajj",
@@ -54,7 +54,7 @@ export const NavigationMenusData: NavigationMenusType[] = [
       {
         title: "Ashura Travel",
         description: "Ziyarat trips to Iraq & Iran",
-        icon: "Users",
+        path: "ashura-travel.jpg",
         dropdown: false,
         item: null,
         href: "/ashura-travel",
@@ -62,7 +62,7 @@ export const NavigationMenusData: NavigationMenusType[] = [
       {
         title: "Rail Europe",
         description: "Explore the European continent by train",
-        icon: "TrainTrack",
+        path: "rail-europe.jpg",
         dropdown: false,
         item: null,
         href: "/rail-europe",
@@ -70,7 +70,7 @@ export const NavigationMenusData: NavigationMenusType[] = [
       {
         title: "Visa Services",
         description: "Hassle-free visa processing for you",
-        icon: "Stamp",
+        path: "visa-service.jpg",
         dropdown: false,
         item: null,
         href: "/visa-services",
@@ -80,14 +80,14 @@ export const NavigationMenusData: NavigationMenusType[] = [
   {
     title: "Destinations",
     description: "Explore our top travel destinations.",
-    icon: null,
+    path: null,
     dropdown: true,
     href: "#",
     item: [
       {
         title: "London",
         description: "Historic charm, modern vibe.",
-        icon: "MapPin",
+        path: "london.jpg",
         dropdown: false,
         item: null,
         href: "/destinations/london",
@@ -95,7 +95,7 @@ export const NavigationMenusData: NavigationMenusType[] = [
       {
         title: "Istanbul",
         description: "Where East truly meets West.",
-        icon: "MapPin",
+        path: "istanbul.jpg",
         dropdown: false,
         item: null,
         href: "/destinations/istanbul",
@@ -103,7 +103,7 @@ export const NavigationMenusData: NavigationMenusType[] = [
       {
         title: "Bali",
         description: "The tropical island of gods.",
-        icon: "MapPin",
+        path: "bali.jpg",
         dropdown: false,
         item: null,
         href: "/destinations/bali",
@@ -111,7 +111,7 @@ export const NavigationMenusData: NavigationMenusType[] = [
       {
         title: "New York",
         description: "The city that never sleeps.",
-        icon: "MapPin",
+        path: "new-york.jpg",
         dropdown: false,
         item: null,
         href: "/destinations/new-york",
@@ -119,7 +119,7 @@ export const NavigationMenusData: NavigationMenusType[] = [
       {
         title: "Karachi",
         description: "Pakistan's vibrant city of lights.",
-        icon: "MapPin",
+        path: "karachi.jpg",
         dropdown: false,
         item: null,
         href: "/destinations/karachi",
@@ -127,7 +127,7 @@ export const NavigationMenusData: NavigationMenusType[] = [
       {
         title: "Bangkok",
         description: "Bustling markets, ornate shrines.",
-        icon: "MapPin",
+        path: "bangkok.jpg",
         dropdown: false,
         item: null,
         href: "/destinations/bangkok",
@@ -135,7 +135,7 @@ export const NavigationMenusData: NavigationMenusType[] = [
       {
         title: "Mumbai",
         description: "The heart of Bollywood cinema.",
-        icon: "MapPin",
+        path: "mumbai.jpg",
         dropdown: false,
         item: null,
         href: "/destinations/mumbai",
@@ -143,7 +143,7 @@ export const NavigationMenusData: NavigationMenusType[] = [
       {
         title: "Dubai",
         description: "Luxury shopping & modern marvels.",
-        icon: "MapPin",
+        path: "dubai.jpg",
         dropdown: false,
         item: null,
         href: "/destinations/dubai",
@@ -151,7 +151,7 @@ export const NavigationMenusData: NavigationMenusType[] = [
       {
         title: "Tehran",
         description: "A bustling city with history.",
-        icon: "MapPin",
+        path: "tehran.jpeg",
         dropdown: false,
         item: null,
         href: "/destinations/tehran",
@@ -159,7 +159,7 @@ export const NavigationMenusData: NavigationMenusType[] = [
       {
         title: "Johannesburg",
         description: "South Africa's vibrant hub.",
-        icon: "MapPin",
+        path: "johannesburg.jpeg",
         dropdown: false,
         item: null,
         href: "/destinations/johannesburg",
@@ -167,7 +167,7 @@ export const NavigationMenusData: NavigationMenusType[] = [
       {
         title: "Colombo",
         description: "Port city with colonial charm.",
-        icon: "MapPin",
+        path: "colombo.jpeg",
         dropdown: false,
         item: null,
         href: "/destinations/colombo",
@@ -175,7 +175,7 @@ export const NavigationMenusData: NavigationMenusType[] = [
       {
         title: "Delhi",
         description: "India's bustling capital city.",
-        icon: "MapPin",
+        path: "delhi.webp",
         dropdown: false,
         item: null,
         href: "/destinations/delhi",
@@ -183,7 +183,7 @@ export const NavigationMenusData: NavigationMenusType[] = [
       {
         title: "Jeddah",
         description: "Major port city on the Red Sea.",
-        icon: "MapPin",
+        path: "jeddah.jpg",
         dropdown: false,
         item: null,
         href: "/destinations/jeddah",
@@ -191,7 +191,7 @@ export const NavigationMenusData: NavigationMenusType[] = [
       {
         title: "Dhaka",
         description: "The capital of Bangladesh.",
-        icon: "MapPin",
+        path: "dhaka.jpeg",
         dropdown: false,
         item: null,
         href: "/destinations/dhaka",
@@ -201,7 +201,7 @@ export const NavigationMenusData: NavigationMenusType[] = [
   {
     title: "About",
     description: "Our story and mission",
-    icon: null,
+    path: null,
     dropdown: false,
     item: null,
     href: "/",
@@ -209,7 +209,7 @@ export const NavigationMenusData: NavigationMenusType[] = [
   {
     title: "Contact",
     description: "Get in touch with us",
-    icon: null,
+    path: null,
     dropdown: false,
     item: null,
     href: "/",
@@ -269,7 +269,7 @@ export const AboutUsMediaGridData: AboutUsMediaGridType[] = [
 
 export const ServicesData: ServicesType[] = [
   {
-    icon: "Building",
+    path: "corporate-travel.jpg",
     title: "Corporate Travel",
     description: "Efficient, professional solutions for business travelers.",
     features: [
@@ -280,7 +280,7 @@ export const ServicesData: ServicesType[] = [
     ],
   },
   {
-    icon: "Shield",
+    path: "travel-insurance.jpg",
     title: "Travel Insurance",
     description: "Customized plans for worry-free journeys.",
     features: [
@@ -291,7 +291,7 @@ export const ServicesData: ServicesType[] = [
     ],
   },
   {
-    icon: "Moon",
+    path: "umrah-n-hajj.jpg",
     title: "Umrah & Hajj",
     description: "Complete, spiritually-fulfilling pilgrimage packages.",
     features: [
@@ -302,7 +302,7 @@ export const ServicesData: ServicesType[] = [
     ],
   },
   {
-    icon: "Users",
+    path: "ashura-travel.jpg",
     title: "Ashura Travel",
     description:
       "Organized Ziyarat trips to sacred destinations in Iraq & Iran.",
@@ -314,7 +314,7 @@ export const ServicesData: ServicesType[] = [
     ],
   },
   {
-    icon: "Train",
+    path: "rail-europe.jpg",
     title: "Rail Europe",
     description: "Explore Europe's scenic landscapes by train with ease.",
     features: [
@@ -325,7 +325,7 @@ export const ServicesData: ServicesType[] = [
     ],
   },
   {
-    icon: "Stamp",
+    path: "visa-service.jpg",
     title: "Visa Services",
     description: "Hassle-free visa application and processing assistance.",
     features: [
@@ -459,8 +459,7 @@ export const DestinationsData: DestinationsType[] = [
     name: "Karachi",
     country: "Pakistan",
     price: "$299",
-    image:
-      "https://images.pexels.com/photos/1209978/pexels-photo-1209978.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image: "karachi.jpg",
     rating: 4.5,
     description: "The vibrant city of lights",
   },
@@ -548,9 +547,9 @@ export const DestinationsData: DestinationsType[] = [
 ];
 
 export const StatsData: StatsType[] = [
-  { key: "flights", label: "Flights Booked", value: 2500000, suffix: "M+" },
-  { key: "customers", label: "Happy Customers", value: 50000, suffix: "K+" },
-  { key: "destinations", label: "Destinations", value: 500, suffix: "+" },
+  { key: "flights", label: "Flights Booked", value: 10000, suffix: "K+" },
+  { key: "customers", label: "Happy Customers", value: 5000, suffix: "K+" },
+  { key: "destinations", label: "Destinations", value: 14, suffix: "+" },
   { key: "satisfaction", label: "Satisfaction Rate", value: 98, suffix: "%" },
 ];
 

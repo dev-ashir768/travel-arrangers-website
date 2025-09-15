@@ -51,7 +51,7 @@ Travel Arrangers Inc. is a trusted travel agency based in Mississauga offering f
 
 1. Clone the repository
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/dev-ashir768/travel-arrangers-website.git
    cd travel-arrangers
    ```
 
@@ -109,4 +109,4 @@ Travel Arrangers Inc. - [Website](https://travelarrangers.ca)
 
 ---
 
-© 2023 Travel Arrangers Inc. TICO licensed travel agency with 20+ years of expertise in Mississauga.
+© 2025 Travel Arrangers Inc. TICO licensed travel agency with 20+ years of expertise in Mississauga.

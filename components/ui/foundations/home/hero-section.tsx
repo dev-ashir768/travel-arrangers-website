@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import React from 'react'
-import { MapPin, Phone } from 'lucide-react'
-import { Button } from '../../shadcn/button'
-import SectionBadge from '../common/section-badge'
+import React from "react";
+import { MapPin, Phone } from "lucide-react";
+import { Button } from "@/components/ui/shadcn/button";
+import SectionBadge from "../common/section-badge";
 
 interface HeroSectionProps {
-  scrollY: number
+  scrollY: number;
 }
 
 const HeroSection: React.FC<HeroSectionProps> = ({ scrollY }) => {
@@ -22,12 +22,16 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY }) => {
           style={{ transform: `translateY(${scrollY * 0.3}px)` }}
         >
           <source
-            src="/videos/70-airlines.mp4"
+            src="/videos/small-vecteezy_widebody-airplane-approaching-before-landing_7302848_small.mp4"
             type="video/mp4"
           />
         </video>
+
         {/* Parallax Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-dark-blue via-dark-blue/90 to-primary/20" style={{ transform: `translateY(${scrollY * 0.5}px)` }} />
+        <div
+          className="absolute inset-0 bg-gradient-to-br from-[#E8F0F9] via-[#E8F0F9] to-[#E8F0F9]"
+          style={{ transform: `translateY(${scrollY * 0.5}px)` }}
+        />
 
         {/* Animated Clouds */}
         <div className="absolute inset-0">
@@ -52,7 +56,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY }) => {
           <svg className="w-full h-full" viewBox="0 0 1200 800">
             <path
               d="M50,650 Q300,150 600,350 Q900,550 1150,250"
-              stroke="rgba(236, 36, 38, 0.4)"
+              stroke="rgb(0, 0, 0, 0.5)"
               strokeWidth="4"
               fill="none"
               strokeDasharray="15,8"
@@ -64,34 +68,47 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY }) => {
         {/* Main Content */}
         <div className="relative z-10 text-center container mx-auto px-4 lg:px-6">
           <div className="animate-fadeInUp">
-            <SectionBadge title='✈ TICO Licensed • Trusted Since 2001' variant='secondary' className='mb-4 lg:mb-6' />
+            <SectionBadge
+              title="✈ TICO Licensed • Trusted Since 2001"
+              variant="primary"
+              className="mb-4 lg:mb-6"
+            />
 
-            <h1 className="max-w-5xl mx-auto text-3xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-red-400 animate-pulse">Travel{" "}</span>Made Simple,
-              Memories Made Forever
+            <h1 className="max-w-5xl mx-auto text-3xl md:text-6xl lg:text-7xl font-bold text-mid-night mb-6 leading-tight">
+              Travel Made Simple,{" "}
+              <span className="text-primary">Memories Made Forever</span>
             </h1>
 
-            <p className="text-lg md:text-2xl text-primary-foreground mb-8 max-w-2xl mx-auto leading-relaxed animate-fadeInUp-delay">
-              Mississauga&apos;s trusted travel agency. Since 2001, we&apos;ve been booking flights,
-              vacations, and corporate travel with expertise and care.
+            <p className="text-lg md:text-2xl text-primary font-medium mb-8 max-w-2xl mx-auto leading-relaxed animate-fadeInUp-delay">
+              Mississauga&apos;s trusted travel agency. Since 2001, we&apos;ve
+              been booking flights, vacations, and corporate travel with
+              expertise and care.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 lg-gap-6 justify-center items-center animate-fadeInUp-delay-2 mb-12">
-              <div className='relative sm:w-max w-full'>
-                <Button className='sm:w-[166px] w-full' size="lg">Book Your Trip</Button>
-                <span className='absolute top-0 right-0 w-3 h-3 rounded-full animate-ping bg-gradient-to-r from-white to-primary'></span>
+              <div className="relative sm:w-max w-full">
+                <Button className="sm:w-[166px] w-full" size="lg">
+                  Book Your Trip
+                </Button>
+                <span className="absolute top-0 right-0 w-3 h-3 rounded-full animate-ping bg-gradient-to-r from-white to-primary"></span>
               </div>
-              <Button className='sm:w-[166px] w-full' variant="secondary" size="lg">Get a Quote</Button>
+              {/* <Button
+                className="sm:w-[166px] w-full"
+                variant="secondary"
+                size="lg"
+              >
+                Get a Quote
+              </Button> */}
             </div>
 
             {/* Contact Info */}
             <div className="flex flex-col xs:flex-row gap-4 lg-gap-6 justify-center items-center text-primary-foreground animate-fadeInUp-delay-2">
-              <div className="flex items-center space-x-2">
-                <Phone className="h-5 w-5 text-primary" />
+              <div className="flex items-center space-x-2 text-primary">
+                <Phone className="h-5 w-5" />
                 <span className="font-medium">(905) 267-9262</span>
               </div>
-              <div className="flex items-center space-x-2">
-                <MapPin className="h-5 w-5 text-primary" />
+              <div className="flex items-center space-x-2 text-primary">
+                <MapPin className="h-5 w-5" />
                 <span className="font-medium">Mississauga, ON</span>
               </div>
             </div>
@@ -99,36 +116,39 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY }) => {
 
           {/* Floating Stats */}
           <div className="absolute top-10 xl:top-20 right-10 hidden lg:block animate-float">
-            <div className="bg-white/20 backdrop-blur-md rounded-2xl p-6 border border-white/30">
-              <div className="text-3xl font-bold text-white">20+</div>
-              <div className="text-primary-foreground text-sm">Years Experience</div>
+            <div className="bg-white backdrop-blur-md rounded-2xl p-6 border border-primary/50 shadow-2xl">
+              <div className="text-3xl font-bold text-primary">20+</div>
+              <div className="text-mid-night text-sm">Years Experience</div>
             </div>
           </div>
 
           <div className="absolute bottom-32 left-10 hidden lg:block animate-float-delay">
-            <div className="bg-white/20 backdrop-blur-md rounded-2xl p-6 border border-white/30">
-              <div className="text-3xl font-bold text-white">1000+</div>
-              <div className="text-white/80 text-sm">Hotel Partners</div>
+            <div className="bg-white backdrop-blur-md rounded-2xl p-6 border border-primary/50 shadow-2xl">
+              <div className="text-3xl font-bold text-primary">1000+</div>
+              <div className="text-mid-night text-sm">Hotel Partners</div>
             </div>
           </div>
 
-          <div className="absolute top-1/2 right-20 hidden lg:block animate-float" style={{ animationDelay: '3s' }}>
-            <div className="bg-white/20 backdrop-blur-md rounded-2xl p-6 border border-white/30">
-              <div className="text-2xl font-bold text-white">TICO</div>
-              <div className="text-white/80 text-sm">Licensed</div>
+          <div
+            className="absolute top-1/2 right-20 hidden lg:block animate-float"
+            style={{ animationDelay: "3s" }}
+          >
+            <div className="bg-white backdrop-blur-md rounded-2xl p-6 border border-primary/50 shadow-2xl">
+              <div className="text-2xl font-bold text-primary">TICO</div>
+              <div className="text-mid-night text-sm">Licensed</div>
             </div>
           </div>
         </div>
 
         {/* Scroll Indicator */}
         <div className="absolute md:bottom-8 bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/60 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
+          <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
           </div>
         </div>
       </section>
     </>
-  )
-}
+  );
+};
 
-export default HeroSection
+export default HeroSection;

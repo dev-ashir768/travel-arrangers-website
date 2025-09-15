@@ -13,6 +13,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/shadcn/carousel";
 import SectionBadge from '../common/section-badge';
+import Image from 'next/image';
 
 const Services = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -73,17 +74,16 @@ const Services = () => {
               className="w-full rounded-md lg:rounded-xl">
               <CarouselContent>
                 {ServicesData.map((service, index) => {
-                  const Icon = Icons[service.icon as keyof typeof Icons] as React.ElementType
                   return (
                     <CarouselItem key={index}>
                       <div className="w-full h-full flex-shrink-0">
-                        <div className={`bg-primary/10 h-full lg:p-12 p-6 rounded-md lg:rounded-xl mx-4`}>
+                        <div className={`bg-primary/10 h-full lg:p-12 p-6 rounded-md lg:rounded-xl`}>
                           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                             <div>
-                              <div className={`relative w-20 h-20 rounded-md lg:rounded-xl bg-gradient-to-br from-primary/80 to-primary/90 flex items-center justify-center mb-6`}>
-                                <Icon className="h-10 w-10 text-white" />
+                              <div className={`relative w-20 h-20 rounded-md lg:rounded-xl flex items-center justify-center overflow-hidden mb-6`}>
+                                <Image src={`/images/others/${service.path}`} fill className="w-full h-full object-cover" alt={service.path} />
                               </div>
-                              <h3 className="text-3xl font-bold text-foreground mb-4">{service.title}</h3>
+                              <h3 className="text-3xl font-bold text-mid-night mb-4">{service.title}</h3>
                               <p className="text-lg font-medium text-muted-foreground mb-6">{service.description}</p>
                               <button className="group flex items-center space-x-2 text-primary font-semibold cursor-pointer">
                                 <span>Explore More</span>
@@ -117,7 +117,7 @@ const Services = () => {
                 <button
                   key={index}
                   onClick={() => api?.scrollTo(index)}
-                  className={cn("w-3 h-3 rounded-full transition-all duration-300 cursor-pointer", current === index + 1 ? 'bg-primary' : 'bg-dark-blue/30 hover:bg-primary')}
+                  className={cn("w-3 h-3 rounded-full transition-all duration-300 cursor-pointer", current === index + 1 ? 'bg-primary' : 'bg-neutral-300 hover:bg-primary')}
                 />
               ))}
             </div>

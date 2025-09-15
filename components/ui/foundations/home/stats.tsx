@@ -56,7 +56,7 @@
 //   }, [isVisible]);
 
 //   return (
-//     <section id="stats-section" className="py-20 bg-gradient-to-br from-dark-blue to-primary/10 relative overflow-hidden">
+//     <section id="stats-section" className="py-20 bg-gradient-to-br from-mid-night to-primary/10 relative overflow-hidden">
 //       {/* Background Elements */}
 //       <div className="absolute inset-0">
 //         {[...Array(20)].map((_, i) => (
@@ -110,11 +110,10 @@
 
 // export default Stats;
 
-
-import { StatsData } from '@/json/data.json';
-import { StatKey, StatsType } from '@/type/global.types';
-import React, { useState, useEffect, useRef } from 'react';
-import SectionBadge from '../common/section-badge';
+import { StatsData } from "@/json/data.json";
+import { StatKey, StatsType } from "@/type/global.types";
+import React, { useState, useEffect, useRef } from "react";
+import SectionBadge from "../common/section-badge";
 
 const Stats = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -137,7 +136,7 @@ const Stats = () => {
       { threshold: 0.5 }
     );
 
-    const element = document.getElementById('stats-section');
+    const element = document.getElementById("stats-section");
     if (element) observer.observe(element);
 
     return () => observer.disconnect();
@@ -153,10 +152,11 @@ const Stats = () => {
     const timers = StatsData.map((stat) => {
       const increment = stat.value / steps;
       return setInterval(() => {
-        setCounts(prevCounts => {
+        setCounts((prevCounts) => {
           const newCount = prevCounts[stat.key] + increment;
           if (newCount >= stat.value) {
-            const timerToClear = timers[StatsData.findIndex(s => s.key === stat.key)];
+            const timerToClear =
+              timers[StatsData.findIndex((s) => s.key === stat.key)];
             clearInterval(timerToClear);
             return { ...prevCounts, [stat.key]: stat.value };
           }
@@ -165,15 +165,14 @@ const Stats = () => {
       }, stepDuration);
     });
 
-    return () => timers.forEach(timer => clearInterval(timer));
+    return () => timers.forEach((timer) => clearInterval(timer));
   }, [isVisible]);
 
   const formatCount = (stat: StatsType) => {
     const value = Math.floor(counts[stat.key]);
     switch (stat.key) {
-      case 'flights':
-        return `${(value / 1000000).toFixed(1)}${stat.suffix}`;
-      case 'customers':
+      case "flights":
+      case "customers":
         return `${Math.round(value / 1000)}${stat.suffix}`;
       default:
         return `${value}${stat.suffix}`;
@@ -181,12 +180,16 @@ const Stats = () => {
   };
 
   return (
-    <section ref={sectionRef} id="stats-section" className="py-16 lg:py-20 bg-gradient-to-br from-dark-blue to-primary/10 relative overflow-hidden">
+    <section
+      ref={sectionRef}
+      id="stats-section"
+      className="py-16 lg:py-20 bg-background relative overflow-hidden"
+    >
       <div className="absolute inset-0">
         {[...Array(20)].map((_, i) => (
           <div
             key={i}
-            className="absolute w-2 h-2 bg-white/10 rounded-full animate-twinkle"
+            className="absolute w-2 h-2 bg-primary/10 rounded-full animate-twinkle"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -197,12 +200,18 @@ const Stats = () => {
       </div>
 
       <div className="relative container mx-auto px-4 lg:px-6">
-        <div className={`text-center mb-12 lg:mb-14 transform transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"}`}>
-          <SectionBadge title='Our Supermacy' variant='secondary' className='mb-4 lg:mb-6' />
-          <h2 className="text-4xl md:text-5xl font-bold text-white  mb-4 lg:mb-6">
+        <div
+          className={`text-center mb-12 lg:mb-14 transform transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"}`}
+        >
+          <SectionBadge
+            title="Our Supermacy"
+            variant="primary"
+            className="mb-4 lg:mb-6"
+          />
+          <h2 className="text-4xl md:text-5xl font-bold text-mid-night  mb-4 lg:mb-6">
             Trusted by <span className="text-primary">Millions</span>
           </h2>
-          <p className="text-lg text-primary-foreground font-medium leading-relaxed max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground font-medium leading-relaxed max-w-2xl mx-auto">
             Join the world&apos;s largest community of travelers
           </p>
         </div>
@@ -211,14 +220,17 @@ const Stats = () => {
           {StatsData.map((stat, index) => (
             <div
               key={stat.key}
-              className={`bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20 hover:bg-white/20 group text-center transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-                }`}
+              className={`bg-secondary backdrop-blur-md rounded-2xl p-8 border border-secondary group text-center transform transition-all duration-1000 ${
+                isVisible
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-20 opacity-0"
+              }`}
               style={{ transitionDelay: `${index * 200}ms` }}
             >
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2 group-hover:scale-110 transition-transform duration-300">
+              <div className="text-4xl md:text-5xl font-bold text-mid-night mb-2 group-hover:scale-110 transition-transform duration-300">
                 {formatCount(stat)}
               </div>
-              <div className="text-white/80 font-medium">
+              <div className="text-muted-foreground font-medium">
                 {stat.label}
               </div>
             </div>

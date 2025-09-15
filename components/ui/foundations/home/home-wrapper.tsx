@@ -32,7 +32,7 @@ const HomeWrapper = () => {
       <SpecialOffer />
       <AirlineVideo/>
       <Stats />
-      <CTA />
+    <CTA />
     </>
   )
 }

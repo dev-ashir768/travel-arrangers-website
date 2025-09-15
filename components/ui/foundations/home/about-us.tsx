@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useState } from 'react'
-import { Button } from '../../shadcn/button';
+import { Button } from '@/components/ui/shadcn/button';
 import SectionBadge from '../common/section-badge';
 import Image from 'next/image';
 
@@ -42,7 +42,7 @@ const AboutUs = () => {
             <div className={`transform transition-all duration-1000 ${isVisible ? 'translate-x-0 opacity-100' : '-translate-x-20 opacity-0'}`}>
               <SectionBadge title='About Travel Arrangers Inc.' variant='primary' className='mb-4 lg:mb-6' />
 
-              <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 lg:mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-mid-night mb-4 lg:mb-6">
                 More Than Travel Agents{' '}
                 <span className="text-primary">We&apos;re Your Journey Partners</span>
               </h2>
@@ -58,11 +58,11 @@ const AboutUs = () => {
               </p>
 
               <div className="grid grid-cols-2 gap-4 lg-gap-6 mb-8">
-                <div className="text-center p-4 bg-secondary rounded-md lg:rounded-xl">
+                <div className="text-center p-4 bg-background rounded-md lg:rounded-xl">
                   <div className="text-3xl font-bold text-primary mb-2">2001</div>
                   <div className="text-muted-foreground font-medium">Established</div>
                 </div>
-                <div className="text-center p-4 bg-secondary rounded-md lg:rounded-xl">
+                <div className="text-center p-4 bg-background rounded-md lg:rounded-xl">
                   <div className="text-3xl font-bold text-primary mb-2">1000+</div>
                   <div className="text-muted-foreground font-medium">Hotel Partners</div>
                 </div>
@@ -86,11 +86,11 @@ const AboutUs = () => {
                       height={400}
                       alt="plane-with-bags"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/50 to-transparent lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300"></div>
 
-                    <div className="absolute bottom-4 inset-x-4 rounded-md bg-primary-foreground backdrop-blur-sm px-3 py-2 flex flex-col justify-center items-start transform group-hover:translate-y-0 translate-y-25 transition-transform duration-300">
-                      <h6 className="text-base font-semibold text-foreground">Worldwide Travel</h6>
-                      <p className="text-sm font-medium text-muted-foreground">Access to exclusive destinations and premium airline partnerships globally</p>
+                    <div className="absolute bottom-4 inset-x-4 rounded-md bg-primary-foreground backdrop-blur-sm px-3 py-2 flex flex-col justify-center items-start transform translate-y-0 lg:translate-y-26 lg:group-hover:translate-y-0 transition-transform duration-300">
+                      <h6 className="w-full text-sm lg:text-base text-center lg:text-left font-semibold text-foreground">Worldwide Travel</h6>
+                      <p className="hidden lg:block font-medium text-muted-foreground">Access to exclusive destinations and premium airline partnerships globally</p>
                     </div>
                   </div>
                 </div>
@@ -103,10 +103,10 @@ const AboutUs = () => {
                       height={400}
                       alt="plane-with-bags"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="absolute bottom-4 inset-x-4 rounded-md bg-primary-foreground backdrop-blur-sm px-3 py-2 flex flex-col justify-center items-start transform group-hover:translate-y-0 translate-y-25 transition-transform duration-300">
-                      <h6 className="text-base font-semibold text-foreground">1000+ Hotels</h6>
-                      <p className="text-sm font-medium text-muted-foreground">Premium Partners</p>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/50 to-transparent lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute bottom-4 inset-x-4 rounded-md bg-primary-foreground backdrop-blur-sm px-3 py-2 flex flex-col justify-center items-start transform translate-y-0 lg:translate-y-25 lg:group-hover:translate-y-0 transition-transform duration-300">
+                      <h6 className="w-full text-sm lg:text-base text-center lg:text-left font-semibold text-foreground">1000+ Hotels</h6>
+                      <p className="hidden lg:block text-sm font-medium text-muted-foreground">Premium Partners</p>
                     </div>
                   </div>
                 </div>
@@ -119,10 +119,10 @@ const AboutUs = () => {
                       height={400}
                       alt="plane-with-bags"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                    <div className="absolute bottom-4 inset-x-4 rounded-md bg-primary-foreground backdrop-blur-sm px-3 py-2 flex flex-col justify-center items-start transform group-hover:translate-y-0 translate-y-25 transition-transform duration-300">
-                      <h6 className="text-base font-semibold text-foreground">Easy Booking</h6>
-                      <p className="text-sm font-medium text-muted-foreground">24/7 Support</p>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/50 to-transparent lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300"></div>
+                    <div className="absolute bottom-4 inset-x-4 rounded-md bg-primary-foreground backdrop-blur-sm px-3 py-2 flex flex-col justify-center items-start transform translate-y-0 lg:translate-y-25 lg:group-hover:translate-y-0 transition-transform duration-300">
+                      <h6 className="w-full text-sm lg:text-base text-center lg:text-left font-semibold text-foreground">Easy Booking</h6>
+                      <p className="hidden lg:block text-sm font-medium text-muted-foreground">24/7 Support</p>
                     </div>
                   </div>
                 </div>

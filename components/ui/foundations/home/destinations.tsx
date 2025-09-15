@@ -3,7 +3,7 @@ import { ArrowRight, Star, MapPin } from 'lucide-react';
 import { DestinationsData } from '@/json/data.json';
 import Image from 'next/image';
 import SectionBadge from '../common/section-badge';
-import { Button } from '../../shadcn/button';
+import { Button } from '@/components/ui/shadcn/button';
 import Link from 'next/link';
 
 const Destinations = () => {
@@ -25,7 +25,7 @@ const Destinations = () => {
         <div className={`text-center mb-12 lg:mb-14 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
           }`}>
           <SectionBadge title='Famous Destinaions' variant='primary' className='mb-4 lg:mb-6' />
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 lg:mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-mid-night mb-4 lg:mb-6">
             Popular <span className="text-primary">Destinations</span>
           </h2>
           <p className="text-lg text-muted-foreground font-medium leading-relaxed max-w-2xl mx-auto">
@@ -48,12 +48,12 @@ const Destinations = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                 {/* Price Badge */}
-                <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full font-semibold text-sm transform translate-x-30 group-hover:translate-x-0 transition-transform duration-300">
+                <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full font-semibold text-sm transform lg:translate-x-30 lg:group-hover:translate-x-0 transition-transform duration-300">
                   From {destination.price}
                 </div>
 
                 {/* Rating */}
-                <div className="absolute top-4 left-4 bg-primary-foreground backdrop-blur-sm rounded-full px-3 py-1 flex items-center space-x-1 transform -translate-x-21 group-hover:translate-x-0 transition-transform duration-300">
+                <div className="absolute top-4 left-4 bg-primary-foreground backdrop-blur-sm rounded-full px-3 py-1 flex items-center space-x-1 transform lg:-translate-x-21 lg:group-hover:translate-x-0 transition-transform duration-300">
                   <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                   <span className="text-sm font-medium">{destination.rating}</span>
                 </div>
@@ -66,7 +66,7 @@ const Destinations = () => {
                   <span className="text-sm text-foreground">{destination.country}</span>
                 </div>
 
-                <h3 className="text-2xl font-bold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
+                <h3 className="text-2xl font-bold text-mid-night mb-2 group-hover:text-primary transition-colors duration-300">
                   {destination.name}
                 </h3>
 

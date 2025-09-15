@@ -1,7 +1,7 @@
 export type NavigationMenusType = {
   title: string;
   description: string;
-  icon: string | null;
+  path: string | null;
   dropdown: boolean;
   item: NavigationMenusType[] | null;
   href: string;
@@ -23,7 +23,7 @@ export type AboutUsMediaGridType = {
 };
 
 export type ServicesType = {
-  icon: string;
+  path: string;
   title: string;
   description: string;
   features: string[];
