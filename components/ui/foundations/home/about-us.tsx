@@ -63,7 +63,7 @@ const AboutUs = () => {
                   <div className="text-muted-foreground font-medium">Established</div>
                 </div>
                 <div className="text-center p-4 bg-background rounded-md lg:rounded-xl">
-                  <div className="text-3xl font-bold text-primary mb-2">1000+</div>
+                  <div className="text-3xl font-bold text-primary mb-2">95,000+</div>
                   <div className="text-muted-foreground font-medium">Hotel Partners</div>
                 </div>
               </div>
@@ -105,7 +105,7 @@ const AboutUs = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/50 to-transparent lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300"></div>
                     <div className="absolute bottom-4 inset-x-4 rounded-md bg-primary-foreground backdrop-blur-sm px-3 py-2 flex flex-col justify-center items-start transform translate-y-0 lg:translate-y-25 lg:group-hover:translate-y-0 transition-transform duration-300">
-                      <h6 className="w-full text-sm lg:text-base text-center lg:text-left font-semibold text-foreground">1000+ Hotels</h6>
+                      <h6 className="w-full text-sm lg:text-base text-center lg:text-left font-semibold text-foreground">95,000+ Hotels</h6>
                       <p className="hidden lg:block text-sm font-medium text-muted-foreground">Premium Partners</p>
                     </div>
                   </div>

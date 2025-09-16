@@ -547,8 +547,8 @@ export const DestinationsData: DestinationsType[] = [
 ];
 
 export const StatsData: StatsType[] = [
-  { key: "flights", label: "Flights Booked", value: 10000, suffix: "K+" },
-  { key: "customers", label: "Happy Customers", value: 5000, suffix: "K+" },
+  { key: "flights", label: "Flights Booked", value: 2, suffix: "K+" },
+  { key: "customers", label: "Happy Customers", value: 1.2, suffix: "K+" },
   { key: "destinations", label: "Destinations", value: 14, suffix: "+" },
   { key: "satisfaction", label: "Satisfaction Rate", value: 98, suffix: "%" },
 ];

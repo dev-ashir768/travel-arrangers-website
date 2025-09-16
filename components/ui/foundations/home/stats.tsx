@@ -110,78 +110,245 @@
 
 // export default Stats;
 
-import { StatsData } from "@/json/data.json";
-import { StatKey, StatsType } from "@/type/global.types";
+// import { StatsData } from "@/json/data.json";
+// import { StatKey, StatsType } from "@/type/global.types";
+// import React, { useState, useEffect, useRef } from "react";
+// import SectionBadge from "../common/section-badge";
+
+// const Stats = () => {
+//   const [isVisible, setIsVisible] = useState(false);
+//   const [counts, setCounts] = useState<Record<StatKey, number>>({
+//     flights: 0,
+//     customers: 0,
+//     destinations: 0,
+//     satisfaction: 0,
+//   });
+
+//   const sectionRef = useRef<HTMLElement | null>(null);
+
+//   useEffect(() => {
+//     const observer = new IntersectionObserver(
+//       ([entry]) => {
+//         if (entry.isIntersecting) {
+//           setIsVisible(true);
+//         }
+//       },
+//       { threshold: 0.5 }
+//     );
+
+//     const element = document.getElementById("stats-section");
+//     if (element) observer.observe(element);
+
+//     return () => observer.disconnect();
+//   }, []);
+
+//   useEffect(() => {
+//     if (!isVisible) return;
+
+//     const animationDuration = 2000;
+//     const steps = 100;
+//     const stepDuration = animationDuration / steps;
+
+//     const timers = StatsData.map((stat) => {
+//       const increment = stat.value / steps;
+//       return setInterval(() => {
+//         setCounts((prevCounts) => {
+//           const newCount = prevCounts[stat.key] + increment;
+//           if (newCount >= stat.value) {
+//             const timerToClear =
+//               timers[StatsData.findIndex((s) => s.key === stat.key)];
+//             clearInterval(timerToClear);
+//             return { ...prevCounts, [stat.key]: stat.value };
+//           }
+//           return { ...prevCounts, [stat.key]: newCount };
+//         });
+//       }, stepDuration);
+//     });
+
+//     return () => timers.forEach((timer) => clearInterval(timer));
+//   }, [isVisible]);
+
+//   const formatCount = (stat: StatsType) => {
+//     const value = Math.floor(counts[stat.key]);
+//     switch (stat.key) {
+//       case "flights":
+//       case "customers":
+//         return `${Math.round(value / 1000)}${stat.suffix}`;
+//       default:
+//         return `${value}${stat.suffix}`;
+//     }
+//   };
+
+//   return (
+//     <section
+//       ref={sectionRef}
+//       id="stats-section"
+//       className="py-16 lg:py-20 bg-background relative overflow-hidden"
+//     >
+//       <div className="absolute inset-0">
+//         {[...Array(20)].map((_, i) => (
+//           <div
+//             key={i}
+//             className="absolute w-2 h-2 bg-primary/10 rounded-full animate-twinkle"
+//             style={{
+//               left: `${Math.random() * 100}%`,
+//               top: `${Math.random() * 100}%`,
+//               animationDelay: `${Math.random() * 5}s`,
+//             }}
+//           />
+//         ))}
+//       </div>
+
+//       <div className="relative container mx-auto px-4 lg:px-6">
+//         <div
+//           className={`text-center mb-12 lg:mb-14 transform transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"}`}
+//         >
+//           <SectionBadge
+//             title="Our Supermacy"
+//             variant="primary"
+//             className="mb-4 lg:mb-6"
+//           />
+//           <h2 className="text-4xl md:text-5xl font-bold text-mid-night  mb-4 lg:mb-6">
+//             Trusted by <span className="text-primary">Travelers</span>
+//           </h2>
+//           <p className="text-lg text-muted-foreground font-medium leading-relaxed max-w-2xl mx-auto">
+//             Join the world&apos;s largest community of travelers
+//           </p>
+//         </div>
+
+//         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+//           {StatsData.map((stat, index) => (
+//             <div
+//               key={stat.key}
+//               className={`bg-secondary backdrop-blur-md rounded-2xl p-8 border border-secondary group text-center transform transition-all duration-1000 ${
+//                 isVisible
+//                   ? "translate-y-0 opacity-100"
+//                   : "translate-y-20 opacity-0"
+//               }`}
+//               style={{ transitionDelay: `${index * 200}ms` }}
+//             >
+//               <div className="text-4xl md:text-5xl font-bold text-mid-night mb-2 group-hover:scale-110 transition-transform duration-300">
+//                 {formatCount(stat)}
+//               </div>
+//               <div className="text-muted-foreground font-medium">
+//                 {stat.label}
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default Stats;
+
+// Stats.tsx
+
+"use client";
+
+import { StatsData } from "@/json/data.json"; // Make sure the path is correct
+import { StatKey, StatsType } from "@/type/global.types"; // Make sure the path is correct
 import React, { useState, useEffect, useRef } from "react";
-import SectionBadge from "../common/section-badge";
+import SectionBadge from "../common/section-badge"; // Make sure the path is correct
 
 const Stats = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const [counts, setCounts] = useState<Record<StatKey, number>>({
-    flights: 0,
-    customers: 0,
-    destinations: 0,
-    satisfaction: 0,
-  });
+  // Initialize counts based on the keys in StatsData to be more dynamic
+  const initialCounts = StatsData.reduce(
+    (acc, stat) => {
+      acc[stat.key] = 0;
+      return acc;
+    },
+    {} as Record<StatKey, number>
+  );
+
+  const [counts, setCounts] = useState<Record<StatKey, number>>(initialCounts);
 
   const sectionRef = useRef<HTMLElement | null>(null);
 
+  // Effect to observe when the component comes into view
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
+        // Start animation only when the section is 50% visible
         if (entry.isIntersecting) {
           setIsVisible(true);
+          // Unobserve after it becomes visible to prevent re-triggering
+          observer.unobserve(entry.target);
         }
       },
       { threshold: 0.5 }
     );
 
-    const element = document.getElementById("stats-section");
-    if (element) observer.observe(element);
+    const currentSection = sectionRef.current;
+    if (currentSection) {
+      observer.observe(currentSection);
+    }
 
-    return () => observer.disconnect();
+    return () => {
+      if (currentSection) {
+        observer.unobserve(currentSection);
+      }
+    };
   }, []);
 
+  // Effect to run the counting animation
   useEffect(() => {
     if (!isVisible) return;
 
-    const animationDuration = 2000;
-    const steps = 100;
+    const animationDuration = 2000; // 2 seconds for animation
+    const steps = 100; // Number of steps for a smooth animation
     const stepDuration = animationDuration / steps;
 
-    const timers = StatsData.map((stat) => {
+    const timers: NodeJS.Timeout[] = [];
+
+    StatsData.forEach((stat) => {
       const increment = stat.value / steps;
-      return setInterval(() => {
+
+      const timer = setInterval(() => {
         setCounts((prevCounts) => {
-          const newCount = prevCounts[stat.key] + increment;
-          if (newCount >= stat.value) {
-            const timerToClear =
-              timers[StatsData.findIndex((s) => s.key === stat.key)];
-            clearInterval(timerToClear);
+          const currentCount = prevCounts[stat.key];
+
+          if (currentCount >= stat.value) {
+            // Once the target is reached, clear this specific interval
+            clearInterval(timer);
+            // Return the exact final value to avoid overshoot
             return { ...prevCounts, [stat.key]: stat.value };
           }
-          return { ...prevCounts, [stat.key]: newCount };
+
+          // Otherwise, continue incrementing
+          return { ...prevCounts, [stat.key]: currentCount + increment };
         });
       }, stepDuration);
+
+      timers.push(timer);
     });
 
+    // Cleanup function: clear all intervals if the component unmounts mid-animation
     return () => timers.forEach((timer) => clearInterval(timer));
-  }, [isVisible]);
+  }, [isVisible]); // This effect depends only on isVisible
 
-  const formatCount = (stat: StatsType) => {
-    const value = Math.floor(counts[stat.key]);
-    switch (stat.key) {
-      case "flights":
-      case "customers":
-        return `${Math.round(value / 1000)}${stat.suffix}`;
-      default:
-        return `${value}${stat.suffix}`;
+  /**
+   * Formats the animated count for display.
+   * Handles both integer and floating-point numbers correctly.
+   */
+  const formatCount = (stat: StatsType): string => {
+    const count = counts[stat.key];
+
+    // Check if the original value in data is a float (e.g., 1.2)
+    if (stat.value % 1 !== 0) {
+      // For floats, display with one decimal place
+      return `${count.toFixed(1)}${stat.suffix}`;
     }
+
+    // For integers, display the floored value
+    return `${Math.floor(count)}${stat.suffix}`;
   };
 
   return (
     <section
-      ref={sectionRef}
+      ref={sectionRef} // Using ref here
       id="stats-section"
       className="py-16 lg:py-20 bg-background relative overflow-hidden"
     >
@@ -204,12 +371,12 @@ const Stats = () => {
           className={`text-center mb-12 lg:mb-14 transform transition-all duration-1000 ${isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"}`}
         >
           <SectionBadge
-            title="Our Supermacy"
+            title="Our Supremacy"
             variant="primary"
             className="mb-4 lg:mb-6"
           />
-          <h2 className="text-4xl md:text-5xl font-bold text-mid-night  mb-4 lg:mb-6">
-            Trusted by <span className="text-primary">Millions</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-mid-night mb-4 lg:mb-6">
+            Trusted by <span className="text-primary">Travelers</span>
           </h2>
           <p className="text-lg text-muted-foreground font-medium leading-relaxed max-w-2xl mx-auto">
             Join the world&apos;s largest community of travelers

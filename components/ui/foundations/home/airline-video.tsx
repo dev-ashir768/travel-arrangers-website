@@ -9,14 +9,14 @@ const AirlineVideo = () => {
           <VideoDialog
             className="block dark:hidden rounded-md lg:rounded-xl mx-auto"
             animationStyle="top-in-bottom-out"
-            videoSrc="https://www.youtube.com/watch?v=ivSAn7IT2Zg&t=64s"
+            videoSrc="https://youtu.be/ivSAn7IT2Zg?si=00N-YA0PEMeZWtek"
             thumbnailSrc="/images/others/emirates-aeroplane.jpeg"
             thumbnailAlt="airline video"
           />
           <VideoDialog
             className="hidden dark:block rounded-md lg:rounded-xl mx-auto"
             animationStyle="top-in-bottom-out"
-            videoSrc="https://www.youtube.com/watch?v=ivSAn7IT2Zg&t=64s"
+            videoSrc="https://youtu.be/ivSAn7IT2Zg?si=00N-YA0PEMeZWtek"
             thumbnailSrc="/images/others/emirates-aeroplane.jpeg"
             thumbnailAlt="airline video"
           />

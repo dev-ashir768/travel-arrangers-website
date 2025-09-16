@@ -29,7 +29,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY }) => {
 
         {/* Parallax Background */}
         <div
-          className="absolute inset-0 bg-gradient-to-br from-[#E8F0F9] via-[#E8F0F9] to-[#E8F0F9]"
+          className="absolute inset-0 bg-[#E8F0F9]/70"
           style={{ transform: `translateY(${scrollY * 0.5}px)` }}
         />
 
@@ -79,7 +79,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY }) => {
               <span className="text-primary">Memories Made Forever</span>
             </h1>
 
-            <p className="text-lg md:text-2xl text-primary font-medium mb-8 max-w-2xl mx-auto leading-relaxed animate-fadeInUp-delay">
+            <p className="text-lg md:text-2xl text-mid-night font-semibold mb-8 max-w-2xl mx-auto leading-relaxed animate-fadeInUp-delay">
               Mississauga&apos;s trusted travel agency. Since 2001, we&apos;ve
               been booking flights, vacations, and corporate travel with
               expertise and care.
@@ -124,7 +124,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ scrollY }) => {
 
           <div className="absolute bottom-32 left-10 hidden lg:block animate-float-delay">
             <div className="bg-white backdrop-blur-md rounded-2xl p-6 border border-primary/50 shadow-2xl">
-              <div className="text-3xl font-bold text-primary">1000+</div>
+              <div className="text-3xl font-bold text-primary">95,000+</div>
               <div className="text-mid-night text-sm">Hotel Partners</div>
             </div>
           </div>
