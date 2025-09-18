@@ -15,7 +15,7 @@ const HeroSection = () => {
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
           <source
-            src={`${process.env.NEXT_PUBLIC_BASE_URL}/videos/clouds-travel.mp4`}
+            src={`/videos/clouds-travel.mp4`}
             type="video/mp4"
           />
         </video>
