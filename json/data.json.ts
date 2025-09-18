@@ -2,6 +2,7 @@ import {
   AboutUsMediaGridType,
   AirlinePartnersType,
   DestinationsType,
+  ExperienceType,
   FeaturesType,
   FooterLinksType,
   NavigationMenusType,
@@ -271,69 +272,38 @@ export const ServicesData: ServicesType[] = [
   {
     path: "corporate-travel.jpg",
     title: "Corporate Travel",
-    description: "Efficient, professional solutions for business travelers.",
-    features: [
-      "Business Travel Management",
-      "Group Corporate Travel",
-      "Expense Reporting",
-      "Policy Setup",
-    ],
+    description:
+      "Streamline your company's business travel with comprehensive management solutions, ensuring cost-effective and hassle-free journeys for your entire team.",
   },
   {
     path: "travel-insurance.jpg",
     title: "Travel Insurance",
-    description: "Customized plans for worry-free journeys.",
-    features: [
-      "Medical Coverage",
-      "Trip Cancellation",
-      "Baggage Protection",
-      "Emergency Support",
-    ],
+    description:
+      "Travel with complete peace of mind. Our robust insurance plans cover medical emergencies, trip cancellations, and lost baggage so you can focus on your journey.",
   },
   {
     path: "umrah-n-hajj.jpg",
     title: "Umrah & Hajj",
-    description: "Complete, spiritually-fulfilling pilgrimage packages.",
-    features: [
-      "Guided Tours",
-      "Visa Processing",
-      "Premium Accommodations",
-      "Ground Transportation",
-    ],
+    description:
+      "Embark on a profound spiritual journey with our all-inclusive packages. We manage visas, flights, and premium accommodations for a seamless pilgrimage.",
   },
   {
     path: "ashura-travel.jpg",
     title: "Ashura Travel",
     description:
-      "Organized Ziyarat trips to sacred destinations in Iraq & Iran.",
-    features: [
-      "Group Ziyarat Packages",
-      "Experienced Local Guides",
-      "All-inclusive Services",
-      "Secure Arrangements",
-    ],
+      "Join our guided Ziyarat tours to the holy sites of Iraq and Iran. We provide secure, well-organized travel for a deeply meaningful spiritual experience.",
   },
   {
     path: "rail-europe.jpg",
     title: "Rail Europe",
-    description: "Explore Europe's scenic landscapes by train with ease.",
-    features: [
-      "Eurail Passes",
-      "Point-to-Point Tickets",
-      "High-Speed Trains",
-      "Scenic Routes",
-    ],
+    description:
+      "Experience the charm of Europe with extensive rail passes. Travel seamlessly between iconic cities while enjoying breathtaking scenic routes from your seat.",
   },
   {
     path: "visa-service.jpg",
     title: "Visa Services",
-    description: "Hassle-free visa application and processing assistance.",
-    features: [
-      "Application Assistance",
-      "Document Verification",
-      "Appointment Scheduling",
-      "Fast Processing",
-    ],
+    description:
+      "Navigate complex visa procedures with our expert assistance. We provide end-to-end support, from document preparation to submission, for global destinations.",
   },
 ];
 
@@ -349,7 +319,7 @@ export const FooterLinksData: FooterLinksType = {
   Experiences: [
     "Disney Vacations",
     "Cruises",
-    "Destawed",
+    "Tawed",
     "Europe Tours",
     "Vacation Packages",
     "All-Inclusive Resorts",
@@ -423,8 +393,7 @@ export const DestinationsData: DestinationsType[] = [
     name: "London",
     country: "UK",
     price: "$549",
-    image:
-      "https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image: "london.jpg",
     rating: 4.8,
     description: "Historic charm and modern culture",
   },
@@ -432,8 +401,7 @@ export const DestinationsData: DestinationsType[] = [
     name: "Istanbul",
     country: "Turkey",
     price: "$699",
-    image:
-      "https://images.pexels.com/photos/1549326/pexels-photo-1549326.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image: "istanbul.jpg",
     rating: 4.9,
     description: "Where East meets West",
   },
@@ -442,7 +410,7 @@ export const DestinationsData: DestinationsType[] = [
     country: "Indonesia",
     price: "$999",
     image:
-      "https://images.pexels.com/photos/3225517/pexels-photo-3225517.jpeg?auto=compress&cs=tinysrgb&w=600",
+     "bali.jpg",
     rating: 4.9,
     description: "Island of gods, a tropical paradise",
   },
@@ -450,8 +418,7 @@ export const DestinationsData: DestinationsType[] = [
     name: "New York",
     country: "USA",
     price: "$649",
-    image:
-      "https://images.pexels.com/photos/378570/pexels-photo-378570.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image: "new-york.jpg",
     rating: 4.7,
     description: "The city that never sleeps",
   },
@@ -468,7 +435,7 @@ export const DestinationsData: DestinationsType[] = [
     country: "Thailand",
     price: "$749",
     image:
-      "https://images.pexels.com/photos/3975590/pexels-photo-3975590.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "bangkok.jpg",
     rating: 4.8,
     description: "Bustling markets and ornate shrines",
   },
@@ -477,7 +444,7 @@ export const DestinationsData: DestinationsType[] = [
     country: "India",
     price: "$499",
     image:
-      "https://images.pexels.com/photos/4173250/pexels-photo-4173250.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "mumbai.jpg",
     rating: 4.6,
     description: "The heart of the Bollywood film industry",
   },
@@ -486,7 +453,7 @@ export const DestinationsData: DestinationsType[] = [
     country: "UAE",
     price: "$799",
     image:
-      "https://images.pexels.com/photos/1534560/pexels-photo-1534560.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "dubai.jpg",
     rating: 4.8,
     description: "Luxury shopping and ultramodern architecture",
   },
@@ -495,7 +462,7 @@ export const DestinationsData: DestinationsType[] = [
     country: "Iran",
     price: "$450",
     image:
-      "https://images.pexels.com/photos/12472957/pexels-photo-12472957.jpeg?auto=compress&cs=tinysrgb&w=600",
+     "tehran.jpeg",
     rating: 4.4,
     description: "A bustling capital with rich history",
   },
@@ -504,7 +471,7 @@ export const DestinationsData: DestinationsType[] = [
     country: "South Africa",
     price: "$1099",
     image:
-      "https://images.pexels.com/photos/2246476/pexels-photo-2246476.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "johannesburg.jpeg",
     rating: 4.7,
     description: "South Africa's biggest city and vibrant hub",
   },
@@ -513,7 +480,7 @@ export const DestinationsData: DestinationsType[] = [
     country: "Sri Lanka",
     price: "$599",
     image:
-      "https://images.pexels.com/photos/10398086/pexels-photo-10398086.jpeg?auto=compress&cs=tinysrgb&w=600",
+     "colombo.jpeg",
     rating: 4.6,
     description: "A port city with a rich colonial heritage",
   },
@@ -522,7 +489,7 @@ export const DestinationsData: DestinationsType[] = [
     country: "India",
     price: "$480",
     image:
-      "https://images.pexels.com/photos/2362002/pexels-photo-2362002.jpeg?auto=compress&cs=tinysrgb&w=600",
+    "delhi.webp",
     rating: 4.7,
     description: "India's capital territory and massive metro area",
   },
@@ -531,7 +498,7 @@ export const DestinationsData: DestinationsType[] = [
     country: "Saudi Arabia",
     price: "$650",
     image:
-      "https://images.pexels.com/photos/15720448/pexels-photo-15720448.jpeg?auto=compress&cs=tinysrgb&w=600",
+  "jeddah.jpg",
     rating: 4.5,
     description: "A major port city on the Red Sea",
   },
@@ -540,7 +507,7 @@ export const DestinationsData: DestinationsType[] = [
     country: "Bangladesh",
     price: "$420",
     image:
-      "https://images.pexels.com/photos/17697746/pexels-photo-17697746/free-photo-of-shaheed-minar-in-dhaka.jpeg?auto=compress&cs=tinysrgb&w=600",
+   "dhaka.jpeg",
     rating: 4.3,
     description: "The capital city of Bangladesh",
   },
@@ -591,5 +558,33 @@ export const AirlinePartnersData: AirlinePartnersType[] = [
   {
     id: 11,
     airline: "pia",
+  },
+];
+
+export const ExperienceData: ExperienceType[] = [
+  {
+    name: "Tawed",
+    description:
+      "Discover unique spiritual journeys and authentic local rituals.",
+    bg_color: "bg-[#ffb900]",
+    text_color: "text-orange-900",
+  },
+  {
+    name: "Cruises",
+    description: "Unpack once and wake up to a new horizon every single day.",
+    bg_color: "bg-mid-night",
+    text_color: "text-white",
+  },
+  {
+    name: "Europe Tours",
+    description: "Explore Europe's iconic landmarks and rich cultural history.",
+    bg_color: "bg-[#344d94]",
+    text_color: "text-white",
+  },
+  {
+    name: "Vacation Packages",
+    description: "Your dream getaway, perfectly planned from flights to stays.",
+    bg_color: "bg-[#7d1941]",
+    text_color: "text-white",
   },
 ];

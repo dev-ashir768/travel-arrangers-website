@@ -1,6 +1,6 @@
 import React from "react";
 import * as Icons from "lucide-react";
-import { Mail, Phone, MapPin, Shield, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { FooterLinksData, SocialLinksData } from "@/json/data.json";
 import Link from "next/link";
 import { Button } from "@/components/ui/shadcn/button";
@@ -90,14 +90,6 @@ const Footer = () => {
                     </div>
                   </div>
                 </div>
-
-                {/* TICO Badge */}
-                <div className="inline-flex items-center bg-primary/20 rounded-lg px-4 py-2 border border-primary/30">
-                  <Shield className="h-5 w-5 text-primary mr-2" />
-                  <span className="text-primary font-semibold text-sm">
-                    TICO Licensed Agency
-                  </span>
-                </div>
               </div>
 
               {/* Links Sections */}
@@ -117,13 +109,27 @@ const Footer = () => {
                   </ul>
                 </div>
               ))}
+
+              <div>
+                  <h4 className="font-semibold mb-4 text-lg text-white">
+                   license
+                  </h4>
+                  <ul className="space-y-4">
+                      <li className="relative w-[100px] h-[70px]">
+                        <Image src={"/images/license/tico.jpeg"} alt="tico" fill className="w-full h-full object-cover" />
+                      </li>
+                       <li className="relative w-[100px] h-[70px]">
+                        <Image src={"/images/license/iata.svg"} alt="iata" fill className="w-full h-full object-cover" />
+                      </li>
+                  </ul>
+                </div>
             </div>
 
             {/* Business Hours */}
             <div className="lg:mt-12 mt-8 lg:pt-12 pt-8 border-t border-muted-foreground">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6 items-center">
                 <div className="h-full">
-                  <h4 className="font-semibold mb-4 text-primary text-lg">
+                  <h4 className="font-semibold mb-4 text-white text-lg">
                     Business Hours
                   </h4>
                   <div className="space-y-3 text-white text-base">
@@ -144,7 +150,7 @@ const Footer = () => {
 
                 {/* Social Links */}
                 <div className="h-full text-left md:text-right">
-                  <h4 className="font-semibold mb-4 text-primary text-lg">
+                  <h4 className="font-semibold mb-4 text-white text-lg">
                     Follow Us
                   </h4>
                   <div className="flex justify-start md:justify-end items-center space-x-4">

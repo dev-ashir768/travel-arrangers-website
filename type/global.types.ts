@@ -26,7 +26,6 @@ export type ServicesType = {
   path: string;
   title: string;
   description: string;
-  features: string[];
 };
 
 export type FooterLinksType = {
@@ -69,3 +68,10 @@ export type StatsType = {
 };
 
 export type AirlinePartnersType = { id: number; airline: string };
+
+export type ExperienceType = {
+  name: string;
+  description: string;
+  bg_color: string;
+  text_color: string;
+};
