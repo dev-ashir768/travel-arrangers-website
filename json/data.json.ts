@@ -207,14 +207,14 @@ export const NavigationMenusData: NavigationMenusType[] = [
     item: null,
     href: "/",
   },
-  {
-    title: "Contact",
-    description: "Get in touch with us",
-    path: null,
-    dropdown: false,
-    item: null,
-    href: "/",
-  },
+  // {
+  //   title: "Contact",
+  //   description: "Get in touch with us",
+  //   path: null,
+  //   dropdown: false,
+  //   item: null,
+  //   href: "/",
+  // },
 ];
 
 export const FeaturesData: FeaturesType[] = [
@@ -322,7 +322,6 @@ export const FooterLinksData: FooterLinksType = {
     "TAwed",
     "Europe Tours",
     "Vacation Packages",
-    "Wedding Destinations",
   ],
   Company: [
     "About",
@@ -588,39 +587,32 @@ export const ExperienceData: ExperienceType[] = [
     name: "Disney Vacations",
     description:
       "Experience the magic of Disney with packages designed for the whole family.",
-    path: "dhaka.jpeg",
+    path: "disney.jpg",
     href: "#",
   },
   {
     name: "Cruises",
     description: "Unpack once and wake up to a new horizon every single day.",
-    path: "dhaka.jpeg",
+    path: "cruise.jpg",
     href: "#",
   },
   {
     name: "TAwed",
     description:
       "Discover unique spiritual journeys and authentic local rituals.",
-    path: "dhaka.jpeg",
+    path: "tawed.jpg",
     href: "#",
   },
   {
     name: "Europe Tours",
     description: "Explore Europe's iconic landmarks and rich cultural history.",
-    path: "dhaka.jpeg",
+    path: "europe-tours.jpg",
     href: "#",
   },
   {
     name: "Vacation Packages",
     description: "Your dream getaway, perfectly planned from flights to stays.",
-    path: "dhaka.jpeg",
-    href: "#",
-  },
-  {
-    name: "Wedding Destination",
-    description:
-      "Say 'I do' in paradise with our curated wedding destinations.",
-    path: "dhaka.jpeg",
+    path: "vacation-packages.jpg",
     href: "#",
   },
 ];

@@ -14,7 +14,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/shadcn/navigation-menu";
 import { Button } from "@/components/ui/shadcn/button";
-import { ArrowLeft, ChevronDown } from "lucide-react";
+import { ArrowLeft, ChevronDown, Headset } from "lucide-react";
 import { NavigationMenusData } from "@/json/data.json";
 import { Fade as Hamburger } from "hamburger-react";
 
@@ -133,6 +133,10 @@ const Navbar = () => {
           {/* Action Buttons & Mobile Menu Toggle */}
           <div className={cn("flex items-center gap-3")}>
             <Button className="hidden lg:flex w-[166px]" size="lg">
+              <Headset />
+              Travel Support
+            </Button>
+            <Button className="hidden lg:flex w-[166px]" size="lg">
               Get a Quote
             </Button>
             <div className="flex lg:hidden cursor-pointer">
@@ -197,6 +201,10 @@ const Navbar = () => {
                         </button>
                       )
                     )}
+                    <Button className="w-full" size="lg">
+                      <Headset />
+                      Travel Support
+                    </Button>
                     <Button className="w-full" size="lg">
                       Get a Quote
                     </Button>

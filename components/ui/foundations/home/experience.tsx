@@ -68,13 +68,13 @@ const Experience = () => {
               {ExperienceData.map((experience, index) => (
                 <CarouselItem
                   key={index}
-                  className="basis-full h-full md:basis-1/3"
+                  className="basis-full h-full md:basis-1/2 lg:basis-1/3"
                 >
                   <Link
                     href={experience.href}
-                    className="block group bg-white rounded-3xl overflow-hidden"
+                    className="block group bg-white rounded-3xl overflow-hidden h-full"
                   >
-                    <div className="text-left p-4 mb-8">
+                    <div className="text-left p-4 mb-4 h-[180px]">
                       <h3 className="text-xl font-bold text-mid-night mb-3">
                         {experience.name}
                       </h3>
@@ -87,12 +87,12 @@ const Experience = () => {
                       </p>
                     </div>
 
-                    <div className="relative w-full h-[280px]">
+                    <div className="relative w-full h-[350px]">
                       <Image
                         src={`/images/others/${experience.path}`}
                         alt={experience.path}
                         fill
-                        className="w-full h-full object-cover object-top"
+                        className="w-full h-full object-cover"
                       />
                     </div>
                   </Link>

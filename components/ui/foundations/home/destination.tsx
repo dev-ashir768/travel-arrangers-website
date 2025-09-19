@@ -56,7 +56,7 @@ const Destination = () => {
             {DestinationsData.map((destination, index) => (
               <CarouselItem
                 key={index}
-                className="basis-full h-full md:basis-1/4 lg:basis-1/6"
+                className="basis-full h-full md:basis-1/4 xl:basis-1/6"
               >
                 <div className="group relative flex-shrink-0 w-56 h-72 mx-auto lg:mx-0 rounded-full overflow-hidden cursor-pointer transition-all duration-300 hover:scale-105">
                   <div className="absolute inset-0 bg-gradient-to-br from-black/60 to-black/40 z-10"></div>

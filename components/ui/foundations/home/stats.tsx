@@ -117,7 +117,7 @@ const Stats = () => {
               className="bg-white rounded-4xl shadow-lg overflow-hidden"
               key={index}
             >
-              <div className={`${stats.bg_color} p-6`}>
+              <div className={`${stats.bg_color} p-6 h-[130px]`}>
                 <p className={`text-sm font-medium ${stats.text_color} mb-2`}>
                   Travel Arrangers
                 </p>
