@@ -65,6 +65,9 @@ export type StatsType = {
   label: string;
   value: number;
   suffix: string;
+  description: string;
+  bg_color: string;
+  text_color: string;
 };
 
 export type AirlinePartnersType = { id: number; airline: string };
@@ -72,6 +75,6 @@ export type AirlinePartnersType = { id: number; airline: string };
 export type ExperienceType = {
   name: string;
   description: string;
-  bg_color: string;
-  text_color: string;
+  path: string;
+  href: string;
 };

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/shadcn/button";
 const HeroSection = () => {
   return (
     <>
-      <section className="relative h-[70vh] flex flex-col items-center justify-center">
+      <section className="relative h-screen flex flex-col items-center justify-center">
         <video
           autoPlay
           muted
@@ -15,14 +15,14 @@ const HeroSection = () => {
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
           <source
-            src={`/videos/clouds-travel.mp4`}
+            src={`/videos/aeroplane-globe.mp4`}
             type="video/mp4"
           />
         </video>
 
          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white" />
 
-        <div className="relative z-10 container max-w-7xl mx-auto text-center px-4 lg:px-6 mt-28">
+        <div className="relative z-10 container max-w-7xl mx-auto text-center px-4 lg:px-6">
           <div className="animate-fadeInUp">
             <h1 className="max-w-5xl mx-auto text-3xl lg:text-6xl font-bold text-mid-night lg:mb-6 mb-8 leading-tight">
               A marketplace for businesses with ideas worth traveling for

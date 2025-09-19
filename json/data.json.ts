@@ -319,10 +319,10 @@ export const FooterLinksData: FooterLinksType = {
   Experiences: [
     "Disney Vacations",
     "Cruises",
-    "Tawed",
+    "TAwed",
     "Europe Tours",
     "Vacation Packages",
-    "All-Inclusive Resorts",
+    "Wedding Destinations",
   ],
   Company: [
     "About",
@@ -409,8 +409,7 @@ export const DestinationsData: DestinationsType[] = [
     name: "Bali",
     country: "Indonesia",
     price: "$999",
-    image:
-     "bali.jpg",
+    image: "bali.jpg",
     rating: 4.9,
     description: "Island of gods, a tropical paradise",
   },
@@ -434,8 +433,7 @@ export const DestinationsData: DestinationsType[] = [
     name: "Bangkok",
     country: "Thailand",
     price: "$749",
-    image:
-      "bangkok.jpg",
+    image: "bangkok.jpg",
     rating: 4.8,
     description: "Bustling markets and ornate shrines",
   },
@@ -443,8 +441,7 @@ export const DestinationsData: DestinationsType[] = [
     name: "Mumbai",
     country: "India",
     price: "$499",
-    image:
-    "mumbai.jpg",
+    image: "mumbai.jpg",
     rating: 4.6,
     description: "The heart of the Bollywood film industry",
   },
@@ -452,8 +449,7 @@ export const DestinationsData: DestinationsType[] = [
     name: "Dubai",
     country: "UAE",
     price: "$799",
-    image:
-      "dubai.jpg",
+    image: "dubai.jpg",
     rating: 4.8,
     description: "Luxury shopping and ultramodern architecture",
   },
@@ -461,8 +457,7 @@ export const DestinationsData: DestinationsType[] = [
     name: "Tehran",
     country: "Iran",
     price: "$450",
-    image:
-     "tehran.jpeg",
+    image: "tehran.jpeg",
     rating: 4.4,
     description: "A bustling capital with rich history",
   },
@@ -470,8 +465,7 @@ export const DestinationsData: DestinationsType[] = [
     name: "Johannesburg",
     country: "South Africa",
     price: "$1099",
-    image:
-      "johannesburg.jpeg",
+    image: "johannesburg.jpeg",
     rating: 4.7,
     description: "South Africa's biggest city and vibrant hub",
   },
@@ -479,8 +473,7 @@ export const DestinationsData: DestinationsType[] = [
     name: "Colombo",
     country: "Sri Lanka",
     price: "$599",
-    image:
-     "colombo.jpeg",
+    image: "colombo.jpeg",
     rating: 4.6,
     description: "A port city with a rich colonial heritage",
   },
@@ -488,8 +481,7 @@ export const DestinationsData: DestinationsType[] = [
     name: "Delhi",
     country: "India",
     price: "$480",
-    image:
-    "delhi.webp",
+    image: "delhi.webp",
     rating: 4.7,
     description: "India's capital territory and massive metro area",
   },
@@ -497,8 +489,7 @@ export const DestinationsData: DestinationsType[] = [
     name: "Jeddah",
     country: "Saudi Arabia",
     price: "$650",
-    image:
-  "jeddah.jpg",
+    image: "jeddah.jpg",
     rating: 4.5,
     description: "A major port city on the Red Sea",
   },
@@ -506,18 +497,49 @@ export const DestinationsData: DestinationsType[] = [
     name: "Dhaka",
     country: "Bangladesh",
     price: "$420",
-    image:
-   "dhaka.jpeg",
+    image: "dhaka.jpeg",
     rating: 4.3,
     description: "The capital city of Bangladesh",
   },
 ];
 
 export const StatsData: StatsType[] = [
-  { key: "flights", label: "Flights Booked", value: 2, suffix: "K+" },
-  { key: "customers", label: "Happy Customers", value: 1.2, suffix: "K+" },
-  { key: "destinations", label: "Destinations", value: 14, suffix: "+" },
-  { key: "satisfaction", label: "Satisfaction Rate", value: 98, suffix: "%" },
+  {
+    key: "flights",
+    label: "Flights Booked",
+    value: 2,
+    suffix: "K+",
+    bg_color: "bg-[#ffb900]",
+    text_color: "text-white",
+    description: "We've successfully managed and booked over 2,000 flights." // 56 characters
+  },
+  {
+    key: "customers",
+    label: "Happy Customers",
+    value: 1.2,
+    suffix: "K+",
+    bg_color: "bg-mid-night",
+    text_color: "text-white",
+    description: "Our services are trusted by more than 1,200 happy customers." // 59 characters
+  },
+  {
+    key: "destinations",
+    label: "Destinations",
+    value: 14,
+    suffix: "+",
+    bg_color: "bg-[#344d94]",
+    text_color: "text-white",
+    description: "We offer travel packages to over 14 unique destinations."    // 54 characters
+  },
+  {
+    key: "satisfaction",
+    label: "Satisfaction Rate",
+    value: 98,
+    suffix: "%",
+    bg_color: "bg-[#7d1941]",
+    text_color: "text-white",
+    description: "Our commitment to quality has resulted in a 98% satisfaction." // 59 characters
+  },
 ];
 
 export const AirlinePartnersData: AirlinePartnersType[] = [
@@ -563,28 +585,42 @@ export const AirlinePartnersData: AirlinePartnersType[] = [
 
 export const ExperienceData: ExperienceType[] = [
   {
-    name: "Tawed",
+    name: "Disney Vacations",
     description:
-      "Discover unique spiritual journeys and authentic local rituals.",
-    bg_color: "bg-[#ffb900]",
-    text_color: "text-orange-900",
+      "Experience the magic of Disney with packages designed for the whole family.",
+    path: "dhaka.jpeg",
+    href: "#",
   },
   {
     name: "Cruises",
     description: "Unpack once and wake up to a new horizon every single day.",
-    bg_color: "bg-mid-night",
-    text_color: "text-white",
+    path: "dhaka.jpeg",
+    href: "#",
+  },
+  {
+    name: "TAwed",
+    description:
+      "Discover unique spiritual journeys and authentic local rituals.",
+    path: "dhaka.jpeg",
+    href: "#",
   },
   {
     name: "Europe Tours",
     description: "Explore Europe's iconic landmarks and rich cultural history.",
-    bg_color: "bg-[#344d94]",
-    text_color: "text-white",
+    path: "dhaka.jpeg",
+    href: "#",
   },
   {
     name: "Vacation Packages",
     description: "Your dream getaway, perfectly planned from flights to stays.",
-    bg_color: "bg-[#7d1941]",
-    text_color: "text-white",
+    path: "dhaka.jpeg",
+    href: "#",
+  },
+  {
+    name: "Wedding Destination",
+    description:
+      "Say 'I do' in paradise with our curated wedding destinations.",
+    path: "dhaka.jpeg",
+    href: "#",
   },
 ];

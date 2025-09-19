@@ -7,16 +7,20 @@ import CTA from "./cta";
 import CTA_2 from "./cta-2";
 import Experience from "./experience";
 import Destination from "./destination";
+import Stats from "./stats";
+import AirlinePartner from "./airline-partner";
 
 const HomeWrapper = () => {
   return (
     <>
       <HeroSection />
       <CTA />
+      <Stats />
       <Services />
-      <Experience />
       <CTA_2 />
       <Destination />
+      <Experience />
+      <AirlinePartner />
     </>
   );
 };

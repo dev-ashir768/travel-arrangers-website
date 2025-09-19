@@ -15,7 +15,10 @@ import {
 const Footer = () => {
   return (
     <>
-      <footer className="bg-mid-night text-white bg-no-repeat bg-contain bg-right" style={{backgroundImage: 'url(/images/others/polygon-pattern.png)'}}>
+      <footer
+        className="bg-mid-night text-white bg-no-repeat bg-contain bg-right"
+        style={{ backgroundImage: "url(/images/others/polygon-pattern.png)" }}
+      >
         <div className="container mx-auto px-4 lg:px-6">
           {/* Newsletter Section */}
           <div className="border-b border-muted-foreground">
@@ -75,15 +78,15 @@ const Footer = () => {
                 {/* Contact Info */}
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3 text-white text-base font-normal w-max">
-                    <Phone className="h-4 w-4 text-primary flex-shrink-0" />
+                    <Phone className="h-4 w-4 flex-shrink-0" />
                     <p>(905) 267-9262</p>
                   </div>
                   <div className="flex items-center space-x-3 text-white text-base font-normal w-max">
-                    <Mail className="h-4 w-4 text-primary flex-shrink-0" />
+                    <Mail className="h-4 w-4 flex-shrink-0" />
                     <p>info@travelarrangers.ca</p>
                   </div>
                   <div className="flex items-start space-x-3 text-white text-base font-normal w-max">
-                    <MapPin className="h-4 w-4 text-primary flex-shrink-0 mt-1" />
+                    <MapPin className="h-4 w-4 flex-shrink-0 mt-1" />
                     <div>
                       <p>3045 Southcreek Rd #43</p>
                       <p>Mississauga, ON L4X 2X7</p>
@@ -111,18 +114,28 @@ const Footer = () => {
               ))}
 
               <div>
-                  <h4 className="font-semibold mb-4 text-lg text-white">
-                   license
-                  </h4>
-                  <ul className="space-y-4">
-                      <li className="relative w-[100px] h-[70px]">
-                        <Image src={"/images/license/tico.jpeg"} alt="tico" fill className="w-full h-full object-cover" />
-                      </li>
-                       <li className="relative w-[100px] h-[70px]">
-                        <Image src={"/images/license/iata.svg"} alt="iata" fill className="w-full h-full object-cover" />
-                      </li>
-                  </ul>
-                </div>
+                <h4 className="font-semibold mb-4 text-lg text-white">
+                  license
+                </h4>
+                <ul className="space-y-4">
+                  <li className="relative w-[100px] h-[70px]">
+                    <Image
+                      src={"/images/license/tico.jpeg"}
+                      alt="tico"
+                      fill
+                      className="w-full h-full object-cover"
+                    />
+                  </li>
+                  <li className="relative w-[100px] h-[70px]">
+                    <Image
+                      src={"/images/license/iata.svg"}
+                      alt="iata"
+                      fill
+                      className="w-full h-full object-cover"
+                    />
+                  </li>
+                </ul>
+              </div>
             </div>
 
             {/* Business Hours */}
@@ -174,14 +187,13 @@ const Footer = () => {
               </div>
             </div>
           </div>
-
-          {/* Bottom Footer */}
-          <div className="border-t border-primary-foreground/50">
-            <div className="py-6">
-              <div className="text-white text-center text-sm md:text-left">
-                © {new Date().getFullYear()} Travel Arrangers Inc. | All Rights
-                Reserved | Created by <Link href="#">Quantara</Link>
-              </div>
+        </div>
+        {/* Bottom Footer */}
+        <div className="bg-primary w-full">
+          <div className="container mx-auto px-4 lg:px-6 py-6">
+            <div className="text-white text-center text-sm md:text-left">
+              © {new Date().getFullYear()} Travel Arrangers Inc. | All Rights
+              Reserved | Created by <Link href="#">Quantara</Link>
             </div>
           </div>
         </div>

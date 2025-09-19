@@ -1,115 +1,22 @@
-// import React, { useEffect, useState } from 'react';
-// import { ArrowRight, Star, MapPin } from 'lucide-react';
-// import { DestinationsData } from '@/json/data.json';
-// import Image from 'next/image';
-// import SectionBadge from '../common/section-badge';
-// import { Button } from '@/components/ui/shadcn/button';
-// import Link from 'next/link';
-
-// const Destinations = () => {
-//   const [isVisible, setIsVisible] = useState(false);
-
-//   useEffect(() => {
-//     const observer = new IntersectionObserver(
-//       ([entry]) => setIsVisible(entry.isIntersecting),
-//       { threshold: 0.3 }
-//     );
-//     const element = document.getElementById('experience-section');
-//     if (element) observer.observe(element);
-//     return () => observer.disconnect();
-//   }, []);
-
-//   return (
-//     <section id="experience-section" className="py-16 lg:py-20 bg-secondary">
-//       <div className="container mx-auto px-4 lg:px-6">
-//         <div className={`text-center mb-12 lg:mb-14 transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
-//           }`}>
-//           <SectionBadge title='Famous Destinaions' variant='primary' className='mb-4 lg:mb-6' />
-//           <h2 className="text-4xl md:text-5xl font-bold text-mid-night mb-4 lg:mb-6">
-//             Popular <span className="text-primary">Destinations</span>
-//           </h2>
-//           <p className="text-lg text-muted-foreground font-medium leading-relaxed max-w-2xl mx-auto">
-//             Discover amazing places around the world with exclusive deals
-//           </p>
-//         </div>
-
-//         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 lg:gap-6">
-//           {DestinationsData.slice(0, 4).map((destination, index) => (
-//             <div key={index} className="group relative bg-background rounded-md lg:rounded-xl overflow-hidden cursor-pointer">
-//               {/* Image */}
-//               <div className="relative h-64 overflow-hidden">
-//                 <Image
-//                   src={destination.image}
-//                   alt={destination.name}
-//                   width={100}
-//                   height={100}
-//                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-//                 />
-//                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-//                 {/* Price Badge */}
-//                 <div className="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full font-semibold text-sm transform lg:translate-x-30 lg:group-hover:translate-x-0 transition-transform duration-300">
-//                   From {destination.price}
-//                 </div>
-
-//                 {/* Rating */}
-//                 <div className="absolute top-4 left-4 bg-primary-foreground backdrop-blur-sm rounded-full px-3 py-1 flex items-center space-x-1 transform lg:-translate-x-21 lg:group-hover:translate-x-0 transition-transform duration-300">
-//                   <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-//                   <span className="text-sm font-medium">{destination.rating}</span>
-//                 </div>
-//               </div>
-
-//               {/* Content */}
-//               <div className="p-6">
-//                 <div className="flex items-center space-x-2 mb-2">
-//                   <MapPin className="h-4 w-4 text-primary" />
-//                   <span className="text-sm text-foreground">{destination.country}</span>
-//                 </div>
-
-//                 <h3 className="text-2xl font-bold text-mid-night mb-2 group-hover:text-primary transition-colors duration-300">
-//                   {destination.name}
-//                 </h3>
-
-//                 <p className="text-muted-foreground mb-4">
-//                   {destination.description}
-//                 </p>
-
-//                 <button className="flex items-center space-x-2 text-primary font-semibold group-hover:space-x-3 transition-all duration-300">
-//                   <span>Explore Deals</span>
-//                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
-//                 </button>
-//               </div>
-
-//               {/* Hover Effect */}
-//               <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-//             </div>
-//           ))}
-//         </div>
-
-//         {/* View All Button */}
-//         <div className='relative mx-auto sm:w-max w-full mt-12'>
-//           <Button className='sm:w-[166px] w-full' size="lg" asChild>
-//             <Link href="#">
-//               View All
-//             </Link>
-//           </Button>
-//           <span className='absolute top-0 right-0 w-3 h-3 rounded-full animate-ping bg-gradient-to-r from-white to-primary'></span>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Destinations;
-
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/shadcn/button";
 import Link from "next/link";
-import CTA from "./cta";
 import { ExperienceData } from "@/json/data.json";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  type CarouselApi,
+} from "@/components/ui/shadcn/carousel";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const Experience = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -121,51 +28,109 @@ const Experience = () => {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    if (!api) {
+      return;
+    }
+    setCount(api.scrollSnapList().length);
+    setCurrent(api.selectedScrollSnap() + 1);
+    api.on("select", () => {
+      setCurrent(api.selectedScrollSnap() + 1);
+    });
+  }, [api]);
+
   return (
-    <section id="experience-section" className="pt-16 lg:pt-20 bg-[#E8EFF8]">
+    <section
+      id="experience-section"
+      className="py-16 lg:py-20 bg-primary bg-no-repeat bg-cover"
+      style={{ backgroundImage: "url(/images/others/polygon-pattern.png)" }}
+    >
       <div className="container max-w-7xl mx-auto px-4 lg:px-6">
         <div
           className={`mb-12 lg:mb-14 transform transition-all duration-1000 ${
             isVisible ? "translate-y-0 opacity-100" : "translate-y-20 opacity-0"
           }`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-mid-night mb-4 lg:mb-6">
-            You deserve unrivaled choice for travel
+          <h2 className="text-4xl md:text-5xl font-bold text-white max-w-3xl">
+            Ideas worth sharing: explore our library of resources
           </h2>
+        </div>
 
+        <div className="w-full mb-12 lg:mb-14">
+          <Carousel
+            setApi={setApi}
+            opts={{
+              align: "start",
+            }}
+            className="w-full"
+          >
+            <CarouselContent>
+              {ExperienceData.map((experience, index) => (
+                <CarouselItem
+                  key={index}
+                  className="basis-full h-full md:basis-1/3"
+                >
+                  <Link
+                    href={experience.href}
+                    className="block group bg-white rounded-3xl overflow-hidden"
+                  >
+                    <div className="text-left p-4 mb-8">
+                      <h3 className="text-xl font-bold text-mid-night mb-3">
+                        {experience.name}
+                      </h3>
+                      <p className="text-primary font-medium mb-3">
+                        {experience.description}
+                      </p>
+                      <p className="text-primary font-medium flex justify-start items-center gap-2">
+                        Explore{" "}
+                        <ArrowRight className="group-hover:ml-2 group-hover:duration-300 group-hover:transition-all" />
+                      </p>
+                    </div>
+
+                    <div className="relative w-full h-[280px]">
+                      <Image
+                        src={`/images/others/${experience.path}`}
+                        alt={experience.path}
+                        fill
+                        className="w-full h-full object-cover object-top"
+                      />
+                    </div>
+                  </Link>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </Carousel>
+
+          <div className="mt-4 flex items-center justify-center gap-2">
+            {Array.from({ length: count }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => api?.scrollTo(index)}
+                className={cn("cursor-pointer h-2 w-6 rounded-full bg-white/30", {
+                  "bg-white w-10": current === index + 1,
+                })}
+              />
+            ))}
+          </div>
+        </div>
+        <div>
+          <div className="mb-4 lg:mb-6">
+            <h2 className="text-3xl lg:text-6xl font-bold leading-tight text-white mb-2">
+              Your great ideas demand action
+            </h2>
+            <p className="lg:text-lg text-base text-primary-foreground max-w-3xl">
+              Let our team help you get started on optimizing your travel
+              program.
+            </p>
+          </div>
           <div className="relative sm:w-[166px] w-full">
-            <Button className="w-full" size="lg" asChild>
-              <Link href="#">View All</Link>
+            <Button className="w-full" size="lg" variant="secondary" asChild>
+              <Link href="#">Get a Quote</Link>
             </Button>
             <span className="absolute top-0 right-0 w-3 h-3 rounded-full animate-ping bg-gradient-to-r from-white to-primary"></span>
           </div>
         </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 lg:gap-6">
-          {ExperienceData.map((experience, index) => (
-            <div className="bg-white rounded-4xl shadow-lg overflow-hidden" key={index}>
-              <div className={`${experience.bg_color} p-6`}>
-                <p className={`text-sm font-medium ${experience.text_color} mb-2`}>
-                  Travel Arrangers
-                </p>
-                <h3 className={`text-xl font-bold ${experience.text_color}`}>{experience.name}</h3>
-              </div>
-              <div className="p-6 text-center">
-                <p className="text-mid-night font-medium mb-6 leading-relaxed">
-                 {experience.description}
-                </p>
-                <div className="sm:w-[166px] w-full mx-auto">
-                  <Button variant="outline" className="w-full" size="lg">
-                    Explore
-                  </Button>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
       </div>
-
-      <CTA />
     </section>
   );
 };
